@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
@@ -10,29 +10,26 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
 
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
+
   module: {
     rules: [
       {
-        test: /\.js$|jsx$/,
+        test: /\.js$|ts$|jsx$|tsx$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.svg$/,
+        test: /\.svg$|png$|jpg$/,
         use: "file-loader",
-      },
-      {
-        test: /\.png$/,
-        type: "asset/resource",
       },
     ],
   },
