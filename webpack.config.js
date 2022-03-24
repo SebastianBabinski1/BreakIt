@@ -1,17 +1,17 @@
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  mode: "development",
-  devtool: "source-map",
+  mode: 'development',
+  devtool: 'source-map',
 
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
   },
 
   module: {
@@ -20,16 +20,16 @@ module.exports = {
         test: /\.js$|ts$|jsx$|tsx$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$|png$|jpg$/,
-        use: "file-loader",
+        use: 'file-loader',
       },
     ],
   },
@@ -39,5 +39,5 @@ module.exports = {
     port: 9000,
   },
 
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
-};
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+}
