@@ -20,7 +20,8 @@
     ],
     "prettier/prettier": [
       "error"
-    ]
+    ],
+    "no-console": 1
   },
   "env": {
     "node": true,
