@@ -1,4 +1,8 @@
 {
+  "env": {
+    "node": true,
+    "browser": true
+  },
   "root": true,
   "extends": [
     "eslint:recommended",
@@ -11,6 +15,7 @@
   "parserOptions": { "project": ["./tsconfig.json"] },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "@typescript-eslint/no-var-requires": "true",
     "@typescript-eslint/strict-boolean-expressions": [
       2,
       {
@@ -22,9 +27,5 @@
       "error"
     ],
     "no-console": 1
-  },
-  "env": {
-    "node": true,
-    "browser": true
   }
 }

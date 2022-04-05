@@ -1,11 +1,15 @@
-import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: {
+    client: './client', 
+    server:'./server'
+  },
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name]/[name].js',
+    path: __dirname + '/dist',
   },
   mode: 'development',
   devtool: 'source-map',
@@ -39,5 +43,5 @@ module.exports = {
     port: 9000,
   },
 
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
-}
+  plugins: [new HtmlWebpackPlugin({ template: './client/index.html' })],
+};
