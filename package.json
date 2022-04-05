@@ -10,7 +10,7 @@
     "build:watch": "webpack serve",
     "lint:ts": "eslint --ext .tsx --ext .ts .",
     "lint:ts:fix": "eslint --ext .tsx --ext .ts --fix .",
-    "lint:scss": "stylelint src/**/*.scss",
+    "lint:scss": "stylelint client/**/*.scss",
     "lint:scss:fix": "stylelint src/**/*.scss --fix",
     "lint": "run-s lint:ts lint:scss",
     "check-types": "tsc --noEmit"
