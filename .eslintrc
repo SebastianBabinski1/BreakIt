@@ -5,15 +5,22 @@
   },
   "root": true,
   "extends": [
+    "plugin:react/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": { "project": ["./tsconfig.json"] },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
     "@typescript-eslint/no-var-requires": 1,
     "@typescript-eslint/strict-boolean-expressions": [

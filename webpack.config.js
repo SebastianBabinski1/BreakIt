@@ -1,15 +1,12 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    client: './client', 
-    server:'./server'
-  },
+  entry: './client',
   output: {
-    filename: '[name]/[name].js',
-    path: __dirname + '/dist',
+    path: __dirname + '/dist/client/',
+    filename: 'index.js',
   },
   mode: 'development',
   devtool: 'source-map',

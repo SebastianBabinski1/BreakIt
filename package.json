@@ -6,14 +6,18 @@
   "scripts": {
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "build:watch": "webpack serve",
+    "build:client": "webpack",
+    "build:server": "babel server -d dist/server --extensions \".ts\"",
+    "build": "run-s build:client build:server",
+    "client:watch": "webpack serve",
+    "server:watch": "babel server -d dist --extensions \".ts\" --watch",
     "lint:ts": "eslint --ext .tsx --ext .ts .",
     "lint:ts:fix": "eslint --ext .tsx --ext .ts --fix .",
     "lint:scss": "stylelint client/**/*.scss",
-    "lint:scss:fix": "stylelint src/**/*.scss --fix",
+    "lint:scss:fix": "stylelint client/**/*.scss --fix",
     "lint": "run-s lint:ts lint:scss",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "check-quality": "run-s lint check-types"
   },
   "repository": {
     "type": "git",
@@ -27,7 +31,9 @@
   },
   "homepage": "https://github.com/SebastianBabinski1/BreakIt#readme",
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
@@ -56,8 +62,6 @@
     "stylelint": "^14.6.0",
     "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "ts-loader": "^9.2.8",
-    "ts-node": "^10.7.0",
     "typescript": "^4.6.3",
     "typescript-plugin-css-modules": "^3.4.0",
     "webpack": "^5.70.0",

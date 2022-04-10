@@ -1,4 +1,3 @@
-import React from 'react';
 import winampImg from '../winamp.svg';
 import styles from './App.module.scss';
 
