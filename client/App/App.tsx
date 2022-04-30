@@ -1,11 +1,8 @@
-import winampImg from '../winamp.svg';
-import styles from './App.module.scss';
-
+import { LandingPage } from './pages/LandingPage';
 export const App = () => {
   return (
-    <div className={styles.app}>
-      Change
-      <img src={winampImg} />
+    <div>
+      <LandingPage />
     </div>
   );
 };

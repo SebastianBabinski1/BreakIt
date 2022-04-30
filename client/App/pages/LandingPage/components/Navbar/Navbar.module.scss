@@ -1,0 +1,77 @@
+@import "/client/App/styles/utils";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 16px;
+
+  &__left {
+    background-color: $yellow;
+    padding: 15px 22px;
+
+    & img {
+      height: 40px;
+      width: 85px;
+    }
+  }
+
+  &__right {
+    padding-right: 15px;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    >button {
+      padding: 10px 25px;
+      color: #0071bc;
+      font-size: inherit;
+      border: none;
+      background: none;
+
+      &.specialist {
+        border-left: 1px solid #ebebeb;
+        color: #676767;
+      }
+
+      &:hover {
+        color: #05314e;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.dropdown {
+  &__button {
+    display: flex;
+
+    &__true {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+
+    &__false {
+      opacity: 0;
+      top: 0;
+      transition: opacity 0.2s, top 0.2s;
+      pointer-events: none;
+    }
+
+    &__true {
+      top: 75px;
+      transition: opacity 0.2s, top 0.2s;
+    }
+  }
+}
