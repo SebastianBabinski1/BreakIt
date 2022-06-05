@@ -1,45 +1,50 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { Dropdown } from '../Dropdown';
+import MobileNavigation from './MobileNavigation/MobileNavigation';
+import MobileNavigationButton from './MobileNavigationButton/MobileNavigationButton';
 import styles from './Navbar.module.scss';
-import arrow from '../../../../assets/arrow.svg';
+import SearchBar from './SearchBar/SearchBar';
+import DesktopNavigation from './DesktopNavigation/DesktopNavigation';
+
+export interface Props {
+  isToggled: boolean;
+  setIsToggled: Dispatch<SetStateAction<boolean>>;
+}
 
 export const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [isShrink, setIsShrink] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
+
+  window.addEventListener('resize', () => {
+    window.screen.width < 992 ? setIsShrink(true) : setIsShrink(false);
+  });
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.navbar__left}>
-        <a href="#">
-          <img src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.230.0/static/media/fixly_logo.431d6d1b.svg"></img>
+    <>
+      <nav className={styles.navbar}>
+        <a className={styles.navbarLeft} href="#">
+          <img
+            className={styles.logo}
+            src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.230.0/static/media/fixly_logo.431d6d1b.svg"
+          ></img>
         </a>
+        <div className={`${styles.navbarRight}`}>
+          {isShrink ? (
+            <div className={styles.mobileNav}>
+              <SearchBar />
+              <MobileNavigationButton isToggled={isToggled} setIsToggled={setIsToggled} />
+            </div>
+          ) : (
+            <DesktopNavigation isToggled={isToggled} setIsToggled={setIsToggled} />
+          )}
+        </div>
+      </nav>
+      <div
+        className={`${styles.menu}
+                   ${isToggled && styles.menuTrue}`}
+      >
+        {isShrink ? <MobileNavigation /> : <Dropdown />}
       </div>
-      <div className={styles.navbar__right}>
-        <nav className={styles.navigation}>
-          <ul className={styles.navigation__list}>
-            <li className={styles.navigation__item}>
-              <button onClick={() => setToggle(!toggle)} className={styles.dropdown__button}>
-                <p>Usługi</p>
-                <img className={toggle ? styles.dropdown__button__true : null} src={arrow} />
-              </button>
-              <div
-                className={`${styles.dropdown__menu}
-                 ${toggle ? styles.dropdown__menu__true : styles.dropdown__menu__false}`}
-              >
-                <Dropdown />
-              </div>
-            </li>
-            <li className={styles.navigation__item}>
-              <button>Moja zapytania</button>
-            </li>
-            <li className={styles.navigation__item}>
-              <button>Zaloguj się</button>
-            </li>
-            <li className={styles.navigation__item}>
-              <button className={styles.specialist}>BreakIt dla wykonawców</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    </>
   );
 };

@@ -1,0 +1,20 @@
+.item {
+  display: flex;
+  width: 33%;
+  margin: 1.3rem 0;
+  justify-content: left;
+  color: #0071bc;
+  font-size: 1rem;
+  font-weight: 700;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    color: #05314e;
+  }
+}
+
+.icon {
+  width: 2rem;
+  margin-right: 1.5rem;
+}

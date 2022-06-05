@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import './App/styles/styles.scss';
+import './App/styles/reset.scss';
 import React from 'react';
 window.React = React;
 

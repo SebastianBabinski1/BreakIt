@@ -1,30 +1,19 @@
 .dropdown {
+  display: flex;
+  justify-content: center;
   background-color: #f6f6f6;
   width: 100%;
-  padding: 45px 0;
+  padding: 2rem 0;
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    justify-content: center;
-  }
-
-  &__item {
+  &List {
     display: flex;
-    margin: 20px 0;
-    justify-content: left;
-    color: #0071bc;
-    font-size: 20px;
-    align-items: center;
-
-    &:hover {
-      color: #05314e;
-      cursor: pointer;
-    }
+    width: 50%;
+    flex-wrap: wrap;
   }
 }
 
-.icon {
-  width: 40px;
-  margin-right: 10px;
+@media (max-width: 1200px) {
+  .dropdownList {
+    width: 80%;
+  }
 }

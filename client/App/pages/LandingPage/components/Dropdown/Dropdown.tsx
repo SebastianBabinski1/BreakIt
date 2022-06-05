@@ -1,84 +1,43 @@
 import styles from './Dropdown.module.scss';
-import hand from '../../../../assets/hand.svg';
-import home from '../../../../assets/home.svg';
-import leaf from '../../../../assets/leaf.svg';
-import business from '../../../../assets/business.svg';
-import party from '../../../../assets/party.svg';
-import repair from '../../../../assets/repair.svg';
+import { hand, home, leaf, business, party, repair } from '../../../../assets/index';
+import ListItem from './ListItem/ListItem';
+
+export interface Props {
+  src: string;
+  text: string;
+}
 
 export const Dropdown = () => {
+  const items = [
+    { src: hand, text: 'Dla Ukrainy' },
+    { src: leaf, text: 'Ogród' },
+    { src: business, text: 'Usługi dla biznesu' },
+    { src: home, text: 'Budowa domu' },
+    { src: party, text: 'Organizacja imprez' },
+    { src: repair, text: 'Montaż i naprawa' },
+    { src: repair, text: 'Elektryk' },
+    { src: repair, text: 'Projektowanie' },
+    { src: repair, text: 'Usługi finansowe' },
+    { src: repair, text: 'Hydraulik' },
+    { src: repair, text: 'Remont' },
+    { src: repair, text: 'Usługi prawne' },
+    { src: repair, text: 'Malarz' },
+    { src: repair, text: 'Sprzątanie' },
+    { src: repair, text: 'Usługi zdalne' },
+    { src: repair, text: 'Meble i zabudowa' },
+    { src: repair, text: 'Szkolenia i języki obce' },
+    { src: repair, text: 'Zdrowie i uroda' },
+    { src: repair, text: 'Motoryzacja' },
+    { src: repair, text: 'Transport' },
+    { src: repair, text: 'Złota rączka' },
+  ];
+
   return (
     <div className={styles.dropdown}>
-      <ul className={styles.dropdown__list}>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={hand} alt="hand" />
-          <a>Dla Ukrainy</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={leaf} alt="leaf" />
-          <a>Ogród</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={business} alt="business" />
-          <a>Usługi dla biznesu</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={home} alt="home" />
-          <a>Budowa domu</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={party} alt="party" />
-          <a>Organizacja imprez</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <img className={styles.icon} src={repair} alt="repair" />
-          <a>Montaż i naprawa</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Elektryk</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Projektowanie</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Usługi finansowe</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Hydraulik</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Remont</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Usługi prawne i administracyjne</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Malarz</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Sprzątanie</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Usługi zdalne</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Meble i zabudowa</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Szkolenia i języki obce</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Zdrowie i uroda</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Motoryzacja</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Transport</a>
-        </li>
-        <li className={styles.dropdown__item}>
-          <a>Złota rączka</a>
-        </li>
+      <ul className={styles.dropdownList}>
+        {items.map((item, index) => {
+          return <ListItem key={index} src={item.src} text={item.text} />;
+        })}
       </ul>
     </div>
   );
