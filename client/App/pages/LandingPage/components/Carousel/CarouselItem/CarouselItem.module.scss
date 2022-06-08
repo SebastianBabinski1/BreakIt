@@ -1,0 +1,20 @@
+@import "/client/App/styles/utils";
+
+.carousel {
+  &Item {
+    display: inline-block;
+  }
+
+  &ContentWrapper {
+    display: flex;
+  }
+
+  &Text {
+    background-color: $yellow;
+    width: 100%;
+  }
+}
+
+.withoutText {
+  width: 100%;
+}

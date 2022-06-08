@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Dropdown } from '../Dropdown';
 import MobileNavigation from './MobileNavigation/MobileNavigation';
 import MobileNavigationButton from './MobileNavigationButton/MobileNavigationButton';
@@ -11,13 +11,27 @@ export interface Props {
   setIsToggled: Dispatch<SetStateAction<boolean>>;
 }
 
+export const useCurrentViewport = () => {
+  const [width, setWidth] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setWidth((prevState) => ({ ...prevState, x: window.screen.width }));
+
+    window.addEventListener('resize', () => {
+      setWidth((prevState) => ({ ...prevState, x: window.screen.width }));
+    });
+
+    return () => window.removeEventListener('resize', () => null);
+  }, []);
+
+  return width;
+};
+
 export const Navbar = () => {
-  const [isShrink, setIsShrink] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
 
-  window.addEventListener('resize', () => {
-    window.screen.width < 992 ? setIsShrink(true) : setIsShrink(false);
-  });
+  const width = useCurrentViewport();
+  const isDesktop = width.x < 992;
 
   return (
     <>
@@ -29,7 +43,7 @@ export const Navbar = () => {
           ></img>
         </a>
         <div className={`${styles.navbarRight}`}>
-          {isShrink ? (
+          {isDesktop ? (
             <div className={styles.mobileNav}>
               <SearchBar />
               <MobileNavigationButton isToggled={isToggled} setIsToggled={setIsToggled} />
@@ -43,7 +57,7 @@ export const Navbar = () => {
         className={`${styles.menu}
                    ${isToggled && styles.menuTrue}`}
       >
-        {isShrink ? <MobileNavigation /> : <Dropdown />}
+        {isDesktop ? <MobileNavigation /> : <Dropdown />}
       </div>
     </>
   );
