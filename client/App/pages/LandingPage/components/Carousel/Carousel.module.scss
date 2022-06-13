@@ -2,12 +2,17 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
+  width: 50%;
+  max-width: 800px;
 
   &Inner {
     white-space: nowrap;
-    transition: ease 1s;
+    transition: ease 0.5s;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .carousel {
+    width: 90%;
   }
 }

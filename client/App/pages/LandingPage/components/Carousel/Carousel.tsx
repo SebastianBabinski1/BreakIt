@@ -10,8 +10,6 @@ interface carouselProps {
   controls?: boolean;
   indicators?: boolean;
   autoPlay?: boolean;
-  width?: number;
-  height?: number;
   children?: JSX.Element;
 }
 
@@ -21,8 +19,6 @@ const Carousel = ({
   controls = false,
   indicators = false,
   autoPlay = false,
-  width = 1000,
-  height = 300,
   children,
 }: carouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,24 +66,24 @@ const Carousel = ({
   }, []);
 
   return (
-    <div className={styles.carousel} style={{ width: width }}>
-      <div className={styles.carouselInner} style={{ transform: `translate(${-currentSlide * 100}%)`, height: height }}>
-        {slides.map((slide, index) => (
-          <CarouselItem
-            key={index}
-            slide={slide.image}
-            stopSlide={stopSlideTimer}
-            startSlide={startSlideTimer}
-            width={width}
-            height={height}
-            text={slide.text}
-          />
-        ))}
-        {children}
+    <>
+      <div className={styles.carousel}>
+        <div className={styles.carouselInner} style={{ transform: `translate(${-currentSlide * 100}%)` }}>
+          {slides.map((slide, index) => (
+            <CarouselItem
+              key={index}
+              slide={slide.image}
+              stopSlide={stopSlideTimer}
+              startSlide={startSlideTimer}
+              text={slide.text}
+            />
+          ))}
+          {children}
+        </div>
+        {controls && <CarouselControls prev={prev} next={next} />}
+        {indicators && <CarouselIndicators slides={slides} currentIndex={currentSlide} switchIndex={switchIndex} />}
       </div>
-      {controls && <CarouselControls prev={prev} next={next} />}
-      {indicators && <CarouselIndicators slides={slides} currentIndex={currentSlide} switchIndex={switchIndex} />}
-    </div>
+    </>
   );
 };
 

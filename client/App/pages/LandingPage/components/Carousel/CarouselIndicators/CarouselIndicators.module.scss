@@ -1,25 +1,21 @@
 .carousel {
   &Indicators {
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 1rem;
+    display: flex;
     z-index: 2;
+    justify-content: center;
   }
 
   &Indicator {
     width: 1rem;
     height: 1rem;
     border: none;
-    background-color: #fff;
-    opacity: 0.5;
-    margin: 0.2rem;
+    background-color: #dadada;
+    margin: 0 0.5rem;
     border-radius: 50%;
     cursor: pointer;
-    top: 0;
   }
 }
 
 .active {
-  opacity: 1;
+  background-color: #414141;
 }

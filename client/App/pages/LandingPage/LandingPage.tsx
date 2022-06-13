@@ -5,15 +5,18 @@ import { carouselLanding, flag, installation, smartphone } from '../../assets/im
 export const LandingPage = () => {
   const slides = [
     { image: carouselLanding, text: undefined },
-    { image: flag, text: 'flag' },
-    { image: smartphone, text: 'smartphone' },
-    { image: installation, text: 'installation' },
+    {
+      image: flag,
+      text: 'Шукаєте роботу? Зареєструйтеся як фахівець на Fixly',
+    },
+    { image: smartphone, text: 'Skorzystaj z Płatności Fixly - zleć usługę i zapłać bezpiecznie w aplikacji!' },
+    { image: installation, text: 'Zamów montaż wybranych mebli IKEA na Fixly' },
   ];
 
   return (
     <div>
       <Navbar />
-      <Carousel slides={slides} indicators={true} controls={false} interval={3000} width={800} height={200} />
+      <Carousel slides={slides} indicators={true} controls={false} interval={3000} />
     </div>
   );
 };

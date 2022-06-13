@@ -8,5 +8,6 @@ import search from './search.svg';
 import arrow from './arrow.svg';
 import mobileMenu from './mobileMenu.svg';
 import googlePlay from './google-play.svg';
+import arrowRight from './arrow-right.svg';
 
-export { hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };
+export { arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };
