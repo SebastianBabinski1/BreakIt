@@ -13,9 +13,9 @@
 .text {
   color: #0071bc;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     color: #05314e;
   }
 }

@@ -5,6 +5,7 @@ import MobileNavigationButton from './MobileNavigationButton/MobileNavigationBut
 import styles from './Navbar.module.scss';
 import SearchBar from './SearchBar/SearchBar';
 import DesktopNavigation from './DesktopNavigation/DesktopNavigation';
+import classNames from 'classnames';
 
 export interface Props {
   isToggled: boolean;
@@ -12,12 +13,19 @@ export interface Props {
 }
 
 export const Navbar = () => {
-  const [isShrink, setIsShrink] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
 
-  window.addEventListener('resize', () => {
-    window.screen.width < 992 ? setIsShrink(true) : setIsShrink(false);
-  });
+  const menuStyles = classNames(styles.menu, { [styles.menuTrue]: isToggled });
+
+  const resizeListen = () => {
+    const [isShrink, setIsShrink] = useState(false);
+    window.addEventListener('resize', () => {
+      window.screen.width < 992 ? setIsShrink(true) : setIsShrink(false);
+    });
+    return isShrink;
+  };
+
+  const isMobile = resizeListen();
 
   return (
     <>
@@ -29,7 +37,7 @@ export const Navbar = () => {
           ></img>
         </a>
         <div className={`${styles.navbarRight}`}>
-          {isShrink ? (
+          {isMobile ? (
             <div className={styles.mobileNav}>
               <SearchBar />
               <MobileNavigationButton isToggled={isToggled} setIsToggled={setIsToggled} />
@@ -39,12 +47,7 @@ export const Navbar = () => {
           )}
         </div>
       </nav>
-      <div
-        className={`${styles.menu}
-                   ${isToggled && styles.menuTrue}`}
-      >
-        {isShrink ? <MobileNavigation /> : <Dropdown />}
-      </div>
+      <div className={menuStyles}>{isMobile ? <MobileNavigation /> : <Dropdown />}</div>
     </>
   );
 };
