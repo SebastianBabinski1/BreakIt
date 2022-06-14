@@ -1,6 +1,8 @@
 import Carousel from './components/Carousel/Carousel';
 import { Navbar } from './components/Navbar';
 import { carouselLanding, flag, installation, smartphone } from '../../assets/images';
+import Header from './components/Header/Header';
+import styles from './LandingPage.module.scss';
 
 export const LandingPage = () => {
   const slides = [
@@ -16,7 +18,10 @@ export const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <Carousel slides={slides} indicators={true} controls={false} interval={3000} />
+      <div className={styles.pageContent}>
+        <Carousel slides={slides} indicators={true} controls={false} interval={3000} />
+        <Header />
+      </div>
     </div>
   );
 };

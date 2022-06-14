@@ -1,0 +1,40 @@
+@import "/client/App/styles/utils";
+
+.header {
+  margin: 2rem 0;
+  max-width: 700px;
+}
+
+.image {
+  width: 1rem;
+}
+
+.introduction {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search {
+  display: flex;
+  flex-grow: 1;
+  border: 1px solid #ebebeb;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+
+  &Input {
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+  }
+}
+
+.magnifier {
+  width: 2rem;
+  padding: 0.5rem;
+
+  &Button {
+    background-color: $yellow;
+    border: none;
+    cursor: pointer;
+  }
+}
