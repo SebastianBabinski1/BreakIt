@@ -57,7 +57,7 @@ export const Navbar = () => {
         className={`${styles.menu}
                    ${isToggled && styles.menuTrue}`}
       >
-        {isDesktop ? <MobileNavigation /> : <Dropdown />}
+        {isDesktop ? <MobileNavigation /> : <Dropdown background={true} />}
       </div>
     </>
   );

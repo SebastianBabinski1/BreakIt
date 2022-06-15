@@ -1,5 +1,9 @@
-import { Props } from '../Dropdown';
 import styles from './ListItem.module.scss';
+
+interface Props {
+  src: string;
+  text: string;
+}
 
 const ListItem = (props: Props) => {
   return (
