@@ -9,11 +9,9 @@
     display: flex;
     width: 50%;
     flex-wrap: wrap;
-  }
-}
 
-@media (max-width: 1200px) {
-  .dropdownList {
-    width: 80%;
+    @media (max-width: 1200px) {
+      width: 80%;
+    }
   }
 }

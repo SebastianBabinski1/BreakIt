@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { Dropdown } from '../Dropdown';
 import MobileNavigation from './MobileNavigation/MobileNavigation';
 import MobileNavigationButton from './MobileNavigationButton/MobileNavigationButton';
@@ -6,26 +6,18 @@ import styles from './Navbar.module.scss';
 import SearchBar from './SearchBar/SearchBar';
 import DesktopNavigation from './DesktopNavigation/DesktopNavigation';
 import classNames from 'classnames';
-
-export interface Props {
-  isToggled: boolean;
-  setIsToggled: Dispatch<SetStateAction<boolean>>;
-}
+import { useCurrentViewport } from '../../../../utils';
 
 export const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
 
   const menuStyles = classNames(styles.menu, { [styles.menuTrue]: isToggled });
+  const width = useCurrentViewport();
+  const isDesktop = width.x < 992;
 
-  const resizeListen = () => {
-    const [isShrink, setIsShrink] = useState(false);
-    window.addEventListener('resize', () => {
-      window.screen.width < 992 ? setIsShrink(true) : setIsShrink(false);
-    });
-    return isShrink;
+  const handleToggle = () => {
+    setIsToggled((prevState) => !prevState);
   };
-
-  const isMobile = resizeListen();
 
   return (
     <>
@@ -37,17 +29,17 @@ export const Navbar = () => {
           ></img>
         </a>
         <div className={`${styles.navbarRight}`}>
-          {isMobile ? (
+          {isDesktop ? (
             <div className={styles.mobileNav}>
               <SearchBar />
-              <MobileNavigationButton isToggled={isToggled} setIsToggled={setIsToggled} />
+              <MobileNavigationButton handleToggle={handleToggle} />
             </div>
           ) : (
-            <DesktopNavigation isToggled={isToggled} setIsToggled={setIsToggled} />
+            <DesktopNavigation isToggled={isToggled} handleToggle={handleToggle} />
           )}
         </div>
       </nav>
-      <div className={menuStyles}>{isMobile ? <MobileNavigation /> : <Dropdown />}</div>
+      <div className={menuStyles}>{isDesktop ? <MobileNavigation /> : <Dropdown />}</div>
     </>
   );
 };

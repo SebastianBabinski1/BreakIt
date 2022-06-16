@@ -1,19 +1,23 @@
 import styles from './DesktopNavigation.module.scss';
 import { arrow } from '../../../../../assets';
 import classNames from 'classnames';
-import { Props } from '../Navbar';
 
-const DesktopNavigation = (props: Props) => {
-  const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: props.isToggled });
+interface Props {
+  isToggled: boolean;
+  handleToggle: () => void;
+}
+
+const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
+  const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
-  const grayButtonClasses = classNames(styles.itemButton, styles.grayButton);
+  const goToWorkersSectionButton = classNames(styles.itemButton, styles.grayButton);
 
   return (
     <ul className={styles.list}>
       <li className={toggleItemClasses}>
-        <button onClick={() => props.setIsToggled(!props.isToggled)} className={toggleButtonClasses}>
+        <button onClick={handleToggle} className={toggleButtonClasses}>
           <p>Usługi</p>
-          <img className={props.isToggled ? styles.toggleTrue : undefined} src={arrow} />
+          <img className={isToggled && styles.toggleTrue} src={arrow} />
         </button>
       </li>
       <li className={styles.item}>
@@ -23,7 +27,7 @@ const DesktopNavigation = (props: Props) => {
         <button className={styles.itemButton}>Zaloguj się</button>
       </li>
       <li className={styles.item}>
-        <button className={grayButtonClasses}>BreakIt dla wykonawców</button>
+        <button className={goToWorkersSectionButton}>BreakIt dla wykonawców</button>
       </li>
     </ul>
   );
