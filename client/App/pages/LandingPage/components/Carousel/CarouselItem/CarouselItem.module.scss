@@ -9,10 +9,15 @@
   &ContentWrapper {
     display: flex;
     align-items: center;
-    height: 200px;
     background-color: $yellow;
     white-space: normal;
     border-radius: 1rem;
+    height: 150px;
+    font-size: 0.8rem;
+
+    @media screen and (min-width: 992px) {
+      height: 200px;
+    }
   }
 
   &Text {
@@ -43,17 +48,9 @@
   margin: 1rem;
   border-radius: 50%;
   cursor: pointer;
-}
+  display: none;
 
-@media screen and (max-width: 992px) {
-  .arrow {
-    display: none;
-  }
-
-  .carousel {
-    &ContentWrapper {
-      height: 150px;
-      font-size: 0.8rem;
-    }
+  @media screen and (min-width: 992px) {
+    display: block;
   }
 }

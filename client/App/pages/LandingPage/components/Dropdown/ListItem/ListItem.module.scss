@@ -7,9 +7,9 @@
   font-size: 1rem;
   font-weight: 700;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     color: #05314e;
   }
 }

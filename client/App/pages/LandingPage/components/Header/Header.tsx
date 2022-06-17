@@ -1,7 +1,6 @@
+import { useCurrentViewport } from '../../../../utils';
 import { Dropdown } from '../Dropdown';
-import { useCurrentViewport } from '../Navbar';
 import Categories from './Categories/Categories';
-import styles from './Header.module.scss';
 import ServiceSearch from './ServiceSearch/ServiceSearch';
 
 const Header = () => {

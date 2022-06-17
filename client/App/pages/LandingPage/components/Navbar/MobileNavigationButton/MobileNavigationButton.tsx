@@ -1,10 +1,13 @@
 import styles from './MobileNavigationButton.module.scss';
 import { mobileMenu } from '../../../../../assets';
-import { Props } from '../Navbar';
 
-const MobileNavigationButton = (props: Props) => {
+interface Props {
+  handleToggle: () => void;
+}
+
+const MobileNavigationButton = ({ handleToggle }: Props) => {
   return (
-    <button className={styles.button} onClick={() => props.setIsToggled(!props.isToggled)}>
+    <button className={styles.button} onClick={handleToggle}>
       <img className={styles.icon} src={mobileMenu} alt="menu" />
     </button>
   );

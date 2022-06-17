@@ -1,37 +1,23 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Dropdown } from '../Dropdown';
 import MobileNavigation from './MobileNavigation/MobileNavigation';
 import MobileNavigationButton from './MobileNavigationButton/MobileNavigationButton';
 import styles from './Navbar.module.scss';
 import SearchBar from './SearchBar/SearchBar';
 import DesktopNavigation from './DesktopNavigation/DesktopNavigation';
-
-export interface Props {
-  isToggled: boolean;
-  setIsToggled: Dispatch<SetStateAction<boolean>>;
-}
-
-export const useCurrentViewport = () => {
-  const [width, setWidth] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    setWidth((prevState) => ({ ...prevState, x: window.screen.width }));
-
-    window.addEventListener('resize', () => {
-      setWidth((prevState) => ({ ...prevState, x: window.screen.width }));
-    });
-
-    return () => window.removeEventListener('resize', () => null);
-  }, []);
-
-  return width;
-};
+import classNames from 'classnames';
+import { useCurrentViewport } from '../../../../utils';
 
 export const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
 
+  const menuStyles = classNames(styles.menu, { [styles.menuTrue]: isToggled });
   const width = useCurrentViewport();
   const isDesktop = width.x < 992;
+
+  const handleToggle = () => {
+    setIsToggled((prevState) => !prevState);
+  };
 
   return (
     <>
@@ -46,19 +32,14 @@ export const Navbar = () => {
           {isDesktop ? (
             <div className={styles.mobileNav}>
               <SearchBar />
-              <MobileNavigationButton isToggled={isToggled} setIsToggled={setIsToggled} />
+              <MobileNavigationButton handleToggle={handleToggle} />
             </div>
           ) : (
-            <DesktopNavigation isToggled={isToggled} setIsToggled={setIsToggled} />
+            <DesktopNavigation isToggled={isToggled} handleToggle={handleToggle} />
           )}
         </div>
       </nav>
-      <div
-        className={`${styles.menu}
-                   ${isToggled && styles.menuTrue}`}
-      >
-        {isDesktop ? <MobileNavigation /> : <Dropdown background={true} />}
-      </div>
+      <div className={menuStyles}>{isDesktop ? <MobileNavigation /> : <Dropdown background={true} />}</div>
     </>
   );
 };
