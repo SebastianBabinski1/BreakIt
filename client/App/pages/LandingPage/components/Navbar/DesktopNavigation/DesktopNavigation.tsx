@@ -10,7 +10,7 @@ interface Props {
 const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
   const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
-  const goToWorkersSectionButton = classNames(styles.itemButton, styles.grayButton);
+  const goToWorkersSectionButton = classNames(styles.itemButton, styles.workersSectionButton);
 
   return (
     <ul className={styles.list}>

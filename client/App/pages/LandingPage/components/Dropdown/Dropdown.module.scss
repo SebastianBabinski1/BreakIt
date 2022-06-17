@@ -7,11 +7,11 @@
 
   &List {
     display: flex;
-    width: 50%;
     flex-wrap: wrap;
+    width: 80%;
 
-    @media (max-width: 1200px) {
-      width: 80%;
+    @media (min-width: 1200px) {
+      width: 50%;
     }
   }
 }
