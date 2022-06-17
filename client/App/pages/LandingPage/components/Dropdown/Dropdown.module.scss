@@ -7,13 +7,11 @@
 
   &List {
     display: flex;
-    width: 50%;
     flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 1200px) {
-  .dropdownList {
     width: 80%;
+
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
   }
 }

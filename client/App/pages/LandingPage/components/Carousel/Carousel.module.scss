@@ -2,17 +2,15 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  width: 50%;
   max-width: 800px;
+  width: 90%;
+
+  @media screen and (min-width: 992px) {
+    width: 50%;
+  }
 
   &Inner {
     white-space: nowrap;
     transition: ease 0.5s;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .carousel {
-    width: 90%;
   }
 }
