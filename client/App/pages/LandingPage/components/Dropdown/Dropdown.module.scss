@@ -1,0 +1,17 @@
+.dropdown {
+  display: flex;
+  justify-content: center;
+  background-color: #f6f6f6;
+  width: 100%;
+  padding: 2rem 0;
+
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+}

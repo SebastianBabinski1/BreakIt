@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  max-height: 2rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.image {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+
+.text {
+  color: #0071bc;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: #05314e;
+  }
+}
