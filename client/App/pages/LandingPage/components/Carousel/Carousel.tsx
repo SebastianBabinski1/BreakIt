@@ -5,7 +5,7 @@ import CarouselIndicators from './CarouselIndicators/CarouselIndicators';
 import CarouselControls from './CarouselControls/CarouselControls';
 
 interface carouselProps {
-  slides: any[];
+  slides: { image: string; text: string | undefined }[];
   interval?: number;
   controls?: boolean;
   indicators?: boolean;
