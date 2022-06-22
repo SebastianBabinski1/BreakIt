@@ -1,8 +1,8 @@
 import styles from './CarouselControls.module.scss';
 
 interface carouselControlsProps {
-  prev: any;
-  next: any;
+  prev: () => void;
+  next: () => void;
 }
 
 const CarouselControls = (props: carouselControlsProps) => {

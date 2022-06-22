@@ -1,15 +1,15 @@
 import styles from './CarouselIndicators.module.scss';
 
 interface carouselIndicatorsProps {
-  slides: any;
+  slides: { image: string; text: string | undefined }[];
   currentIndex: number;
-  switchIndex: any;
+  switchIndex: (index: number) => void;
 }
 
 const CarouselIndicators = (props: carouselIndicatorsProps) => {
   return (
     <div className={styles.carouselIndicators}>
-      {props.slides.map((_: any, index: number) => {
+      {props.slides.map((slide, index: number) => {
         return (
           <button
             key={index}
