@@ -1,7 +1,10 @@
 import styles from './MobileNavigationLink.module.scss';
 
-import { Props } from '../MobileNavigation';
-const MobileNavigationLink = (props: Props) => {
+interface mobileNavigationLinkProps {
+  src: string;
+  text: string;
+}
+const MobileNavigationLink = (props: mobileNavigationLinkProps) => {
   return (
     <li className={styles.wrapper}>
       <img className={styles.image} src={props.src}></img>
