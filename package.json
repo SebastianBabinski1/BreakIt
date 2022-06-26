@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "run-s build",
+    "start": "node dist/server",
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client": "webpack",
