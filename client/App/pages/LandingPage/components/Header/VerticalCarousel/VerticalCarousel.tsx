@@ -57,6 +57,18 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
       updateTime: '4 godziny temu',
       place: 'Gdańsk',
     },
+    {
+      clientName: 'Henryka',
+      clientPicture: undefined,
+      clientQuestion: 'Zamontowanie drzwi',
+      specialists: [
+        { name: 'Aleksander', avatar: undefined },
+        { name: 'Piotr', avatar: undefined },
+        { name: 'Alfred', avatar: undefined },
+      ],
+      updateTime: '20 minut temu',
+      place: 'Olsztyn',
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
