@@ -17,7 +17,7 @@ const MobileNavigation = () => {
         <MobileNavigationLink src={hand} text="Zaloguj się" />
       </ul>
       <div className={styles.button}>
-        <img className={styles.buttonImage} src={googlePlay}></img>
+        <img className={styles.buttonImage} src={googlePlay} />
         <p className={styles.buttonText}>POBIERZ APLIKACJĘ BREAKIT</p>
       </div>
     </div>

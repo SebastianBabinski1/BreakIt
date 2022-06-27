@@ -13,11 +13,11 @@ interface Props {
 const CarouselItem = ({ slide, stopSlide, startSlide, text }: Props) => (
   <div className={styles.carouselItem} onMouseOver={stopSlide} onMouseOut={startSlide}>
     <div className={styles.carouselContentWrapper}>
-      <img className={classNames(styles.carouselImage, { [styles.withoutText]: text == '' })} src={slide}></img>
-      {text !== '' && (
+      <img className={classNames(styles.carouselImage, { [styles.withoutText]: text == '' })} src={slide} />
+      {text !== 'x' && (
         <>
           <p className={styles.carouselText}>{text}</p>
-          <img className={styles.arrow} src={arrowRight}></img>
+          <img className={styles.arrow} src={arrowRight} />
         </>
       )}
     </div>

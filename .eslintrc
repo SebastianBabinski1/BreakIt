@@ -23,6 +23,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-var-requires": 1,
+    "react/self-closing-comp": ["error"],
     "@typescript-eslint/strict-boolean-expressions": [
       2,
       {
