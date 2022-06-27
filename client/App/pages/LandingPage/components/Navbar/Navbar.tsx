@@ -11,7 +11,7 @@ import { useCurrentViewport } from '../../../../utils';
 export const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
 
-  const menuStyles = classNames(styles.menu, { [styles.menuTrue]: isToggled });
+  const menuStyles = classNames(styles.menu, { [styles.menuVisible]: isToggled });
   const width = useCurrentViewport();
   const isDesktop = width.x < 992;
 

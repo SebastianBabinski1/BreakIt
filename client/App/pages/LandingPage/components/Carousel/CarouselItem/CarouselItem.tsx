@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { MouseEventHandler } from 'react';
 import { arrowRight } from '../../../../../assets';
 import styles from './CarouselItem.module.scss';
@@ -6,26 +7,21 @@ interface Props {
   slide: string;
   stopSlide: MouseEventHandler<HTMLDivElement>;
   startSlide: MouseEventHandler<HTMLDivElement>;
-  text?: string;
+  text: string;
 }
 
-const CarouselItem = (props: Props) => {
-  return (
-    <div className={styles.carouselItem} onMouseEnter={props.stopSlide} onMouseOut={props.startSlide}>
-      <div className={styles.carouselContentWrapper}>
-        <img
-          className={`${styles.carouselImage} ${props.text == undefined ? styles.withoutText : undefined}`}
-          src={props.slide}
-        ></img>
-        {props.text != undefined && (
-          <>
-            <p className={styles.carouselText}>{props.text}</p>
-            <img onClick={() => console.log('clicked')} className={styles.arrow} src={arrowRight}></img>
-          </>
-        )}
-      </div>
+const CarouselItem = ({ slide, stopSlide, startSlide, text }: Props) => (
+  <div className={styles.carouselItem} onMouseOver={stopSlide} onMouseOut={startSlide}>
+    <div className={styles.carouselContentWrapper}>
+      <img className={classNames(styles.carouselImage, { [styles.withoutText]: text == '' })} src={slide}></img>
+      {text !== '' && (
+        <>
+          <p className={styles.carouselText}>{text}</p>
+          <img className={styles.arrow} src={arrowRight}></img>
+        </>
+      )}
     </div>
-  );
-};
+  </div>
+);
 
 export default CarouselItem;

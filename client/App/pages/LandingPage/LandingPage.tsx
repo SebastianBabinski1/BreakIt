@@ -6,7 +6,7 @@ import styles from './LandingPage.module.scss';
 
 export const LandingPage = () => {
   const slides = [
-    { image: carouselLanding, text: undefined },
+    { image: carouselLanding, text: '' },
     {
       image: flag,
       text: 'Шукаєте роботу? Зареєструйтеся як фахівець на Fixly',
@@ -19,7 +19,7 @@ export const LandingPage = () => {
     <div>
       <Navbar />
       <div className={styles.pageContent}>
-        <Carousel slides={slides} indicators={true} controls={false} interval={3000} />
+        <Carousel slides={slides} indicators={true} controls={false} interval={3000} autoPlay={true} />
         <Header />
       </div>
     </div>
