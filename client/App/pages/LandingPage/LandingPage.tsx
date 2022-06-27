@@ -4,7 +4,7 @@ import { carouselLanding, flag, installation, smartphone } from '../../assets/im
 
 export const LandingPage = () => {
   const slides = [
-    { image: carouselLanding, text: undefined },
+    { image: carouselLanding, text: '' },
     {
       image: flag,
       text: 'Шукаєте роботу? Зареєструйтеся як фахівець на Fixly',
@@ -16,7 +16,7 @@ export const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <Carousel slides={slides} indicators={true} controls={false} interval={3000} />
+      <Carousel slides={slides} indicators={true} controls={false} interval={3000} autoPlay={true} />
     </div>
   );
 };
