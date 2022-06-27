@@ -5,13 +5,13 @@ interface carouselControlsProps {
   next: () => void;
 }
 
-const CarouselControls = (props: carouselControlsProps) => {
+const CarouselControls = ({ prev, next }: carouselControlsProps) => {
   return (
     <div>
-      <button onClick={props.prev} className={`${styles.carouselControl} ${styles.left}`}>
+      <button onClick={prev} className={`${styles.carouselControl} ${styles.left}`}>
         Prev
       </button>
-      <button onClick={props.next} className={`${styles.carouselControl} ${styles.right}`}>
+      <button onClick={next} className={`${styles.carouselControl} ${styles.right}`}>
         Next
       </button>
     </div>
