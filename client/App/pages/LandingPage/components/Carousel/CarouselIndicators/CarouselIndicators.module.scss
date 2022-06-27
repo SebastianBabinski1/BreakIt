@@ -1,0 +1,21 @@
+.carousel {
+  &Indicators {
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+  }
+
+  &Indicator {
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background-color: #dadada;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: #414141;
+}

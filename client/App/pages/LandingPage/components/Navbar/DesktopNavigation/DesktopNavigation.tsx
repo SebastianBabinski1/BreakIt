@@ -10,7 +10,7 @@ interface Props {
 const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
   const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
-  const goToWorkersSectionButtonClasses = classNames(styles.itemButton, styles.goToWorkersSectionButton);
+  const goToWorkersSectionButton = classNames(styles.itemButton, styles.workersSectionButton);
 
   return (
     <ul className={styles.list}>
@@ -27,7 +27,7 @@ const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
         <button className={styles.itemButton}>Zaloguj się</button>
       </li>
       <li className={styles.item}>
-        <button className={goToWorkersSectionButtonClasses}>BreakIt dla wykonawców</button>
+        <button className={goToWorkersSectionButton}>BreakIt dla wykonawców</button>
       </li>
     </ul>
   );

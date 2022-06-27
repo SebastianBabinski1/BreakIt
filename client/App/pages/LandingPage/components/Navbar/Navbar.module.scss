@@ -26,15 +26,19 @@
 }
 
 .menu {
+  z-index: 1;
+  position: absolute;
   width: 100%;
   opacity: 0;
+  top: -100%;
   pointer-events: none;
-  transition: opacity 0.2s, top 0.2s;
+  box-shadow: 0 1px 4px #d1d8ce;
+  transition: opacity 0.2s, top 5s;
 
-  &True {
+  &Visible {
     opacity: 1;
-    top: 4.5rem;
-    transition: opacity 0.2s, top 0.2s;
+    top: 60px;
+    transition: opacity 0.2s;
     pointer-events: all;
   }
 }
