@@ -1,0 +1,32 @@
+@import "/client/App/styles/utils";
+
+.contentWrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.title {
+  font-family: $second-font;
+  font-weight: 700;
+}
+
+.inquiries {
+  font-family: $second-font;
+}
+
+.blure {
+  width: 300px;
+  height: 150px;
+  margin: 0 1rem;
+  background: linear-gradient(0deg, rgb(0 0 0 / 100%), transparent);
+}

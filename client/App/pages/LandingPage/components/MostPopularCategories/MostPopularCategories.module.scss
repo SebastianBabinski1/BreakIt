@@ -1,0 +1,79 @@
+@import "/client/App/styles/utils";
+
+.wrapper {
+  position: relative;
+  color: white;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  border: none;
+  background-color: rgb(255 217 0 / 80%);
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+
+  &Left {
+    left: 5rem;
+    top: calc(50% - 1rem);
+  }
+
+  &Right {
+    right: 5rem;
+    top: calc(50% - 1rem);
+  }
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+
+  &Inner {
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    transition: ease 0.5s;
+  }
+}
+
+.arrow {
+  width: 2rem;
+
+  &Left {
+    transform: rotate(90deg);
+  }
+
+  &Right {
+    transform: rotate(270deg);
+  }
+}
+
+.controlHidden {
+  display: none;
+  pointer-events: none;
+}
+
+.fog {
+  position: absolute;
+  min-height: 150px;
+  width: 200px;
+  z-index: 1;
+
+  &Left {
+    background: linear-gradient(90deg, #fff, hsl(0deg 0% 100% / 0%));
+    top: 0;
+    left: 0;
+  }
+
+  &Right {
+    background: linear-gradient(90deg, hsl(0deg 0% 100% / 0%), #fff);
+    top: 0;
+    right: 0;
+  }
+}

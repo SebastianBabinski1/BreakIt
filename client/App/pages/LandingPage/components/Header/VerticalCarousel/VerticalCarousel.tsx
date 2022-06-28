@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { flag, installation, smartphone } from '../../../../../assets/images';
 import styles from './VerticalCarousel.module.scss';
 import VerticalCarouselItem from './VerticalCarouselItem/VerticalCarouselItem';

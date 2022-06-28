@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { carouselLanding, flag, installation, smartphone } from '../../assets/images';
 import Header from './components/Header/Header';
 import styles from './LandingPage.module.scss';
+import MostPopularCategories from './components/MostPopularCategories/MostPopularCategories';
 
 export const LandingPage = () => {
   const slides = [
@@ -21,6 +22,7 @@ export const LandingPage = () => {
       <div className={styles.pageContent}>
         <Carousel slides={slides} indicators={true} controls={false} interval={3000} autoPlay={true} />
         <Header />
+        <MostPopularCategories />
       </div>
     </div>
   );
