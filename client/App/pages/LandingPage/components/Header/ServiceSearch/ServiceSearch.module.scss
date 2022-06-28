@@ -1,8 +1,21 @@
 @import "/client/App/styles/utils";
 
-.header {
+.service {
   margin: 2rem 0;
-  max-width: 700px;
+  color: #414141;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 1px;
+  font-family: $second-font;
+  margin-bottom: 1rem;
+
+  @media (min-width: 992px) {
+    font-size: 42px;
+  }
 }
 
 .image {
@@ -12,6 +25,7 @@
 .introduction {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
 .search {

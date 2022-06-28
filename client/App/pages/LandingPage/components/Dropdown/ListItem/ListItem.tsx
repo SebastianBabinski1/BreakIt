@@ -5,11 +5,11 @@ interface Props {
   text: string;
 }
 
-const ListItem = (props: Props) => {
+const ListItem = ({ src, text }: Props) => {
   return (
     <li className={styles.item}>
-      <img className={styles.icon} src={props.src} alt="list item" />
-      <a>{props.text}</a>
+      <img className={styles.icon} src={src} alt="list item" />
+      <a>{text}</a>
     </li>
   );
 };

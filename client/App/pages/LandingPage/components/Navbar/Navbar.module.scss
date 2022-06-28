@@ -40,9 +40,18 @@
     top: 60px;
     transition: opacity 0.2s;
     pointer-events: all;
+    background-color: #f6f6f6;
   }
 }
 
 .mobileNav {
   display: flex;
+}
+
+.dropdownWrapper {
+  margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    max-width: 1000px;
+  }
 }

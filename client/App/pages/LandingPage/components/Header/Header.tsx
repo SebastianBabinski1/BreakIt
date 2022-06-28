@@ -10,14 +10,14 @@ const Header = () => {
   const isDesktop = width.x < 992;
 
   return (
-    <>
+    <div className={styles.header}>
       <div className={styles.headerTop}>
         <ServiceSearch />
         {isDesktop === false && <VerticalCarousel autoPlay={true} />}
       </div>
+      {width.x > 992 ? <Dropdown /> : <Categories />}
       {isDesktop && <VerticalCarousel autoPlay={true} />}
-      {width.x > 992 ? <Dropdown background={false} /> : <Categories />}
-    </>
+    </div>
   );
 };
 

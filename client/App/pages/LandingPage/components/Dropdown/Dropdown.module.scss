@@ -4,17 +4,9 @@
   width: 100%;
   padding: 2rem 0;
 
-  &Bg {
-    background-color: #f6f6f6;
-  }
-
   &List {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-
-    @media (min-width: 1200px) {
-      width: 50%;
-    }
+    width: 100%;
   }
 }

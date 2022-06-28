@@ -72,16 +72,16 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideInterval = useRef<number>();
+  const [slideInterval, setSlideInterval] = useState(0);
 
-  const prev = () => {
+  const moveToPrevSlide = () => {
     startSlideTimer();
 
     const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
     setCurrentSlide(index);
   };
 
-  const next = () => {
+  const moveToNextSlide = () => {
     startSlideTimer();
 
     const index = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
@@ -91,17 +91,19 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
   const startSlideTimer = () => {
     if (autoPlay) {
       stopSlideTimer();
-      slideInterval.current = window.setInterval(() => {
+
+      const intervalId = window.setInterval(() => {
         setCurrentSlide((currentSlide) => {
           return currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
         });
       }, interval);
+      setSlideInterval(intervalId);
     }
   };
 
   const stopSlideTimer = () => {
-    if (autoPlay && slideInterval.current != null) {
-      clearInterval(slideInterval.current);
+    if (autoPlay) {
+      clearInterval(slideInterval);
     }
   };
 
@@ -113,7 +115,7 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
   return (
     <div className={styles.wrapper}>
       <button
-        onClick={next}
+        onClick={moveToNextSlide}
         className={`${styles.control} ${currentSlide == slides.length - 1 && styles.controlHidden}`}
       >
         <img
@@ -132,7 +134,7 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
         </div>
         <div className={styles.fog}></div>
       </div>
-      <button onClick={prev} className={`${styles.control} ${currentSlide == 0 && styles.controlHidden}`}>
+      <button onClick={moveToPrevSlide} className={`${styles.control} ${currentSlide == 0 && styles.controlHidden}`}>
         <img
           className={styles.arrowDown}
           src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.241.0/static/media/activity_feed_scroll_arrow.4b8e052d.svg"

@@ -39,7 +39,15 @@ export const Navbar = () => {
           )}
         </div>
       </nav>
-      <div className={menuStyles}>{isDesktop ? <MobileNavigation /> : <Dropdown background={true} />}</div>
+      <div className={menuStyles}>
+        {isDesktop ? (
+          <MobileNavigation />
+        ) : (
+          <div className={styles.dropdownWrapper}>
+            <Dropdown />
+          </div>
+        )}
+      </div>
     </>
   );
 };

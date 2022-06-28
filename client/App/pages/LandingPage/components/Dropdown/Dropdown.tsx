@@ -1,7 +1,6 @@
 import styles from './Dropdown.module.scss';
 import { hand, home, leaf, business, party, repair } from '../../../../assets/index';
 import ListItem from './ListItem/ListItem';
-import classnames from 'classnames';
 
 export const categories = [
   { src: hand, text: 'Dla Ukrainy' },
@@ -27,19 +26,12 @@ export const categories = [
   { src: repair, text: 'Złota rączka' },
 ];
 
-interface dropdownProps {
-  background: boolean;
-}
-
-export const Dropdown = (props: dropdownProps) => {
-  const dropdownClasses = classnames(styles.dropdown, { [styles.dropdownBg]: props.background });
+export const Dropdown = () => {
   return (
-    <div className={dropdownClasses}>
-      <ul className={styles.dropdownList}>
-        {categories.map((item, index) => {
-          return <ListItem key={index} src={item.src} text={item.text} />;
-        })}
-      </ul>
-    </div>
+    <ul className={styles.dropdownList}>
+      {categories.map((item, index) => {
+        return <ListItem key={index} src={item.src} text={item.text} />;
+      })}
+    </ul>
   );
 };

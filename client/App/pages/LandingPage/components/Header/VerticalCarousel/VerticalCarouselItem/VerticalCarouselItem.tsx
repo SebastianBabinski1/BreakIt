@@ -33,7 +33,10 @@ const CarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
             <pre> {slide.clientName} </pre>
           </b>
           napisało {slide.specialists.length} wykonawców w sprawie zapytania
-          <a className={styles.textHighlighted}>{slide.clientQuestion}</a>
+          <pre>
+            {' '}
+            <a className={styles.textHighlighted}>{slide.clientQuestion}</a>
+          </pre>
         </p>
         <div className={styles.avatarsWrapper}>
           {slide.specialists.map((item, index) => (
