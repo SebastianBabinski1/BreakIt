@@ -2,6 +2,7 @@ import styles from './MostPopularCategories.module.scss';
 import { useState } from 'react';
 import MostPopularCategoriesItem from './MostPopularCategoriesItem/MostPopularCategoriesItem';
 import { arrow } from '../../../../assets';
+import { useCurrentViewport } from '../../../../utils';
 
 const MostPopularServicesCarousel = () => {
   const slides = [
@@ -54,6 +55,9 @@ const MostPopularServicesCarousel = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const width = useCurrentViewport();
+  const isDesktop = width.x > 992;
+
   const moveToPrevSlide = () => {
     const index = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
     setCurrentSlide(index);
@@ -88,7 +92,7 @@ const MostPopularServicesCarousel = () => {
       <button
         onClick={moveToNextSlide}
         className={`${styles.control} ${styles.controlRight} 
-        ${currentSlide == slides.length - 5 && styles.controlHidden}`}
+        ${currentSlide == slides.length - (isDesktop ? 2 : 1) && styles.controlHidden}`}
       >
         <img className={`${styles.arrow} ${styles.arrowRight}`} src={arrow}></img>
       </button>

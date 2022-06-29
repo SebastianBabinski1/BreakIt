@@ -3,6 +3,12 @@
 .wrapper {
   position: relative;
   color: white;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  @media (min-width: 992px) {
+    width: 80%;
+  }
 }
 
 .control {
@@ -19,13 +25,21 @@
   cursor: pointer;
 
   &Left {
-    left: 5rem;
     top: calc(50% - 1rem);
+    left: 1rem;
+
+    @media (min-width: 992px) {
+      left: 5rem;
+    }
   }
 
   &Right {
-    right: 5rem;
     top: calc(50% - 1rem);
+    right: 1rem;
+
+    @media (min-width: 992px) {
+      right: 5rem;
+    }
   }
 }
 

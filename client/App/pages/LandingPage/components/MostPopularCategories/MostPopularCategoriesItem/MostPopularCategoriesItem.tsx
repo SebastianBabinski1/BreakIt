@@ -5,12 +5,11 @@ interface mostPopularCategoriesItemProps {
 }
 
 const MostPopularCategoriesItem = ({ slide }: mostPopularCategoriesItemProps) => (
-  <div className={styles.blure}>
-    <div className={styles.contentWrapper} style={{ backgroundImage: `url(${slide.image})` }}>
+  <div className={styles.contentWrapper} style={{ backgroundImage: `url(${slide.image})` }}>
+    <div className={styles.blure}>
       <p className={styles.title}>{slide.title}</p>
       <p className={styles.inquiries}>{slide.numberOfInquiries} zapytań</p>
     </div>
   </div>
 );
-
 export default MostPopularCategoriesItem;
