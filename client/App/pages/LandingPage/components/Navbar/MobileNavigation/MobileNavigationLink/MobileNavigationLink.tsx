@@ -7,7 +7,7 @@ interface mobileNavigationProps {
 const MobileNavigationLink = ({ src, text }: mobileNavigationProps) => {
   return (
     <li className={styles.wrapper}>
-      <img className={styles.image} src={src}></img>
+      <img className={styles.image} src={src} />
       <p className={styles.text}>{text}</p>
     </li>
   );

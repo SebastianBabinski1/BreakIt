@@ -22,7 +22,7 @@ const CarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
           {slide.clientPicture === undefined ? (
             <p>M</p>
           ) : (
-            <img className={styles.avatarImage} src={slide.clientPicture}></img>
+            <img className={styles.avatarImage} src={slide.clientPicture} />
           )}
         </div>
       </div>
@@ -44,7 +44,7 @@ const CarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
               {item.avatar === undefined ? (
                 <p>{item.name[0]}</p>
               ) : (
-                <img className={styles.avatarImage} src={item.avatar}></img>
+                <img className={styles.avatarImage} src={item.avatar} />
               )}
             </div>
           ))}

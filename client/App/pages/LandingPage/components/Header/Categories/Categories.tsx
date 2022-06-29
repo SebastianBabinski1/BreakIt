@@ -10,7 +10,7 @@ const Categories = () => {
         return (
           <div className={styles.listItemWrapper} key={index}>
             <ListItem src={category.src} text={category.text} />
-            <img className={styles.arrow} src={arrow}></img>
+            <img className={styles.arrow} src={arrow} />
           </div>
         );
       })}

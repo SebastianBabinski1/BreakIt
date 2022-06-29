@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { flag, installation, smartphone } from '../../../../../assets/images';
 import styles from './VerticalCarousel.module.scss';
 import VerticalCarouselItem from './VerticalCarouselItem/VerticalCarouselItem';
@@ -121,7 +121,7 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
         <img
           className={styles.arrowUp}
           src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.241.0/static/media/activity_feed_scroll_arrow.4b8e052d.svg"
-        ></img>
+        />
       </button>
       <div className={styles.carousel}>
         <div
@@ -132,13 +132,13 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
             <VerticalCarouselItem key={index} slide={slide} stopSlide={stopSlideTimer} startSlide={startSlideTimer} />
           ))}
         </div>
-        <div className={styles.fog}></div>
+        <div className={styles.fog} />
       </div>
       <button onClick={moveToPrevSlide} className={`${styles.control} ${currentSlide == 0 && styles.controlHidden}`}>
         <img
           className={styles.arrowDown}
           src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.241.0/static/media/activity_feed_scroll_arrow.4b8e052d.svg"
-        ></img>
+        />
       </button>
     </div>
   );
