@@ -14,8 +14,9 @@
     border-radius: 1rem;
     height: 150px;
     font-size: 0.8rem;
+    pointer-events: none;
 
-    @media screen and (min-width: 992px) {
+    @media (min-width: 992px) {
       height: 200px;
     }
   }
@@ -49,8 +50,4 @@
   border-radius: 50%;
   cursor: pointer;
   display: none;
-
-  @media screen and (min-width: 992px) {
-    display: block;
-  }
 }

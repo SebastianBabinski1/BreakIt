@@ -11,7 +11,7 @@ import { useCurrentViewport } from '../../../../utils';
 export const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
 
-  const menuStyles = classNames(styles.menu, { [styles.menuTrue]: isToggled });
+  const menuStyles = classNames(styles.menu, { [styles.menuVisible]: isToggled });
   const width = useCurrentViewport();
   const isDesktop = width.x < 992;
 
@@ -26,7 +26,7 @@ export const Navbar = () => {
           <img
             className={styles.logo}
             src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.230.0/static/media/fixly_logo.431d6d1b.svg"
-          ></img>
+          />
         </a>
         <div className={`${styles.navbarRight}`}>
           {isDesktop ? (

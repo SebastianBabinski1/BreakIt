@@ -1,27 +1,23 @@
 import styles from './CarouselIndicators.module.scss';
 
 interface carouselIndicatorsProps {
-  slides: { image: string; text: string | undefined }[];
+  slides: { image: string; text: string }[];
   currentIndex: number;
   switchIndex: (index: number) => void;
 }
 
-const CarouselIndicators = (props: carouselIndicatorsProps) => {
-  return (
-    <div className={styles.carouselIndicators}>
-      {props.slides.map((slide, index: number) => {
-        return (
-          <button
-            key={index}
-            className={`${styles.carouselIndicator} ${props.currentIndex === index ? styles.active : ''}`}
-            onClick={() => {
-              props.switchIndex(index);
-            }}
-          ></button>
-        );
-      })}
-    </div>
-  );
-};
+const CarouselIndicators = ({ slides, currentIndex, switchIndex }: carouselIndicatorsProps) => (
+  <div className={styles.carouselIndicators}>
+    {slides.map((_, index: number) => (
+      <button
+        key={index}
+        className={`${styles.carouselIndicator} ${currentIndex === index && styles.active}`}
+        onClick={() => {
+          switchIndex(index);
+        }}
+      />
+    ))}
+  </div>
+);
 
 export default CarouselIndicators;
