@@ -26,7 +26,7 @@ export const Navbar = () => {
           <img
             className={styles.logo}
             src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.230.0/static/media/fixly_logo.431d6d1b.svg"
-          ></img>
+          />
         </a>
         <div className={`${styles.navbarRight}`}>
           {isDesktop ? (

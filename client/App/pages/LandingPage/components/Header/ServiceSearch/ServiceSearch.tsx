@@ -9,16 +9,16 @@ const ServiceSearch = () => {
         <pre>Mamy </pre>
         <b>234 573</b>
         <pre> wykonawców, ocenianych średnio na </pre>
-        <img className={styles.image} src={star}></img>
+        <img className={styles.image} src={star} />
         <pre> 4,7. </pre>
         <b>11 288</b>
         <pre> z nich jest teraz online</pre>
       </div>
       <div className={styles.search}>
-        <input placeholder="Wyszukaj usługę, której potrzebujesz..." className={styles.searchInput}></input>
+        <input placeholder="Wyszukaj usługę, której potrzebujesz..." className={styles.searchInput} />
 
         <button className={styles.magnifierButton}>
-          <img className={styles.magnifier} src={search}></img>
+          <img className={styles.magnifier} src={search} />
         </button>
       </div>
     </div>
