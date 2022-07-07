@@ -12,15 +12,11 @@ $content-width-md: 728px;
 $content-width-lg: 1300px;
 
 .pageContent {
-  padding: 0 15px;
+  padding: 0 20px;
 
   @media (min-width: $screen-md) {
-    padding: 0 20px;
-  }
-
-  @media (min-width: $screen-lg) {
-    max-width: $content-width-lg;
-    padding: 0;
     margin: $margin-auto-x;
+    max-width: $content-max-width;
+    padding: 0;
   }
 }
