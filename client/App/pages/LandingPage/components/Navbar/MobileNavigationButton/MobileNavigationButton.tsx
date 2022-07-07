@@ -1,16 +1,14 @@
 import styles from './MobileNavigationButton.module.scss';
 import { mobileMenu } from '../../../../../assets';
 
-interface Props {
+interface MobileNavigationButtonProps {
   handleToggle: () => void;
 }
 
-const MobileNavigationButton = ({ handleToggle }: Props) => {
+export const MobileNavigationButton = ({ handleToggle }: MobileNavigationButtonProps) => {
   return (
     <button className={styles.button} onClick={handleToggle}>
       <img className={styles.icon} src={mobileMenu} alt="menu" />
     </button>
   );
 };
-
-export default MobileNavigationButton;

@@ -6,7 +6,7 @@ interface carouselIndicatorsProps {
   switchIndex: (index: number) => void;
 }
 
-const CarouselIndicators = ({ slides, currentIndex, switchIndex }: carouselIndicatorsProps) => (
+export const CarouselIndicators = ({ slides, currentIndex, switchIndex }: carouselIndicatorsProps) => (
   <div className={styles.carouselIndicators}>
     {slides.map((_, index: number) => (
       <button
@@ -19,5 +19,3 @@ const CarouselIndicators = ({ slides, currentIndex, switchIndex }: carouselIndic
     ))}
   </div>
 );
-
-export default CarouselIndicators;

@@ -1,12 +1,12 @@
 import { MouseEventHandler } from 'react';
 import styles from './VerticalCarouselItem.module.scss';
 
-interface Props {
+interface verticalCarouselItemProps {
   slide: {
     clientName: string;
-    clientPicture: string | undefined;
+    clientPicture: string;
     clientQuestion: string;
-    specialists: { name: string; avatar: string | undefined }[];
+    specialists: { name: string; avatar: string }[];
     updateTime: string;
     place: string;
   };
@@ -14,38 +14,25 @@ interface Props {
   startSlide: MouseEventHandler<HTMLDivElement>;
 }
 
-const CarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
+export const VerticalCarouselItem = ({ slide, stopSlide, startSlide }: verticalCarouselItemProps) => {
   return (
     <div className={styles.carouselItem} onMouseEnter={stopSlide} onMouseOut={startSlide}>
       <div>
         <div className={styles.avatar}>
-          {slide.clientPicture === undefined ? (
-            <p>M</p>
-          ) : (
-            <img className={styles.avatarImage} src={slide.clientPicture} />
-          )}
+          {slide.clientPicture === '' ? <p>M</p> : <img className={styles.avatarImage} src={slide.clientPicture} />}
         </div>
       </div>
       <div>
-        <p className={styles.text}>
-          Do
-          <b>
-            <pre> {slide.clientName} </pre>
-          </b>
-          napisało {slide.specialists.length} wykonawców w sprawie zapytania
-          <pre>
-            {' '}
-            <a className={styles.textHighlighted}>{slide.clientQuestion}</a>
-          </pre>
+        <p>
+          Do <strong>{` ${slide.clientName} `}</strong> napisało {slide.specialists.length} wykonawców w sprawie
+          zapytania
+          <br />
+          <a className={styles.textHighlighted}>{slide.clientQuestion}</a>
         </p>
         <div className={styles.avatarsWrapper}>
           {slide.specialists.map((item, index) => (
             <div key={index} className={`${styles.avatar} ${styles.avatarSmall}`}>
-              {item.avatar === undefined ? (
-                <p>{item.name[0]}</p>
-              ) : (
-                <img className={styles.avatarImage} src={item.avatar} />
-              )}
+              {item.avatar === '' ? <p>{item.name[0]}</p> : <img className={styles.avatarImage} src={item.avatar} />}
             </div>
           ))}
         </div>
@@ -56,5 +43,3 @@ const CarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
     </div>
   );
 };
-
-export default CarouselItem;

@@ -1,24 +1,20 @@
-import { useCurrentViewport } from '../../../../utils';
+import { ScreenWidthValues, useCurrentViewport } from '../../../../utils';
 import { Dropdown } from '../Dropdown';
-import Categories from './Categories/Categories';
-import ServiceSearch from './ServiceSearch/ServiceSearch';
-import VerticalCarousel from './VerticalCarousel/VerticalCarousel';
+import { Categories } from './Categories';
+import { ServiceSearch } from './ServiceSearch';
+import { VerticalCarousel } from './VerticalCarousel';
 import styles from './Header.module.scss';
+import classnames from 'classnames';
 
-const Header = () => {
+export const Header = () => {
   const width = useCurrentViewport();
-  const isDesktop = width.x < 992;
+  const isDesktop = width.x > ScreenWidthValues.MD;
 
   return (
-    <div className={styles.header}>
-      <div className={styles.headerTop}>
-        <ServiceSearch />
-        {isDesktop === false && <VerticalCarousel autoPlay={true} />}
-      </div>
-      {width.x > 992 ? <Dropdown /> : <Categories />}
-      {isDesktop && <VerticalCarousel autoPlay={true} />}
+    <div className={classnames(styles.header, styles.pageContent)}>
+      <ServiceSearch />
+      <VerticalCarousel autoPlay={false} />
+      {isDesktop ? <Dropdown /> : <Categories />}
     </div>
   );
 };
-
-export default Header;

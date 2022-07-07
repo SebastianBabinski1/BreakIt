@@ -1,25 +1,24 @@
-.wrapper {
+@import "/client/App/styles/utils";
+
+.verticalCarousel {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
+  flex: 100%;
+  order: 3;
 
-  @media (min-width: 992px) {
-    max-width: 400px;
-    margin: 0 1rem;
+  @media (min-width: $screen-md) {
+    order: initial;
+    flex: 1;
+    margin: 0 16px;
   }
 }
 
 .carousel {
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  height: 200px;
 
   &Inner {
-    width: 100%;
-    position: absolute;
-    white-space: nowrap;
     transition: ease 0.5s;
   }
 }
@@ -41,8 +40,8 @@
 .control {
   background: none;
   border: none;
-  height: 4rem;
-  width: 6rem;
+  height: 64px;
+  width: 96px;
   cursor: pointer;
   align-self: center;
 

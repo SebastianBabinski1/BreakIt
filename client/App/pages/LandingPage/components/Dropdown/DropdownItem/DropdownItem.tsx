@@ -1,11 +1,11 @@
-import styles from './ListItem.module.scss';
+import styles from './DropdownItem.module.scss';
 
 interface Props {
   src: string;
   text: string;
 }
 
-const ListItem = ({ src, text }: Props) => {
+export const DropdownItem = ({ src, text }: Props) => {
   return (
     <li className={styles.item}>
       <img className={styles.icon} src={src} alt="list item" />
@@ -13,5 +13,3 @@ const ListItem = ({ src, text }: Props) => {
     </li>
   );
 };
-
-export default ListItem;

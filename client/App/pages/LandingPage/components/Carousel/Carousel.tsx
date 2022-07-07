@@ -1,11 +1,12 @@
 import styles from './Carousel.module.scss';
 import CarouselItem from './CarouselItem/CarouselItem';
 import { useEffect, useState } from 'react';
-import CarouselIndicators from './CarouselIndicators/CarouselIndicators';
-import CarouselControls from './CarouselControls/CarouselControls';
+import { CarouselIndicators } from './CarouselIndicators';
+import { CarouselControls } from './CarouselControls';
+import classnames from 'classnames';
+import { carouselSlides as slides } from './utils';
 
 interface carouselProps {
-  slides: { image: string; text: string }[];
   interval?: number;
   controls?: boolean;
   indicators?: boolean;
@@ -13,8 +14,7 @@ interface carouselProps {
   children?: JSX.Element;
 }
 
-const Carousel = ({
-  slides,
+export const Carousel = ({
   interval = 5000,
   controls = false,
   indicators = false,
@@ -69,7 +69,7 @@ const Carousel = ({
   }, []);
 
   return (
-    <div className={styles.carousel}>
+    <div className={classnames(styles.carousel, styles.pageContent)}>
       <div className={styles.carouselInner} style={{ transform: `translate(${-currentSlide * 100}%)` }}>
         {slides.map((slide, index) => (
           <CarouselItem
@@ -87,5 +87,3 @@ const Carousel = ({
     </div>
   );
 };
-
-export default Carousel;

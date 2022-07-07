@@ -5,7 +5,7 @@ interface carouselControlsProps {
   next: () => void;
 }
 
-const CarouselControls = ({ prev, next }: carouselControlsProps) => {
+export const CarouselControls = ({ prev, next }: carouselControlsProps) => {
   return (
     <div>
       <button onClick={prev} className={`${styles.carouselControl} ${styles.left}`}>
@@ -17,5 +17,3 @@ const CarouselControls = ({ prev, next }: carouselControlsProps) => {
     </div>
   );
 };
-
-export default CarouselControls;

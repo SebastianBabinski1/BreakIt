@@ -4,13 +4,12 @@ interface mobileNavigationProps {
   src: string;
   text: string;
 }
-const MobileNavigationLink = ({ src, text }: mobileNavigationProps) => {
+
+export const MobileNavigationLink = ({ src, text }: mobileNavigationProps) => {
   return (
-    <li className={styles.wrapper}>
+    <li className={styles.mobileNavigationLink}>
       <img className={styles.image} src={src} />
       <p className={styles.text}>{text}</p>
     </li>
   );
 };
-
-export default MobileNavigationLink;

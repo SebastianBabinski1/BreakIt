@@ -2,12 +2,12 @@ import styles from './DesktopNavigation.module.scss';
 import { arrow } from '../../../../../assets';
 import classNames from 'classnames';
 
-interface Props {
+interface DesktopNavigationProps {
   isToggled: boolean;
   handleToggle: () => void;
 }
 
-const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
+export const DesktopNavigation = ({ isToggled, handleToggle }: DesktopNavigationProps) => {
   const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
   const goToWorkersSectionButton = classNames(styles.itemButton, styles.workersSectionButton);
@@ -32,5 +32,3 @@ const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
     </ul>
   );
 };
-
-export default DesktopNavigation;
