@@ -1,4 +1,4 @@
-import { hand, home, leaf, business, party, repair } from '../assets/index';
+import { hand, home, leaf, business, party, repair } from '../assets';
 
 export enum ContentWidthValues {
   SM = 290,

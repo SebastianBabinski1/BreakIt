@@ -2,7 +2,7 @@ $body-color: red;
 $yellow: gold;
 $second-font: "Poppins", system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans",
   "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$content-max-width: 1000px;
+$content-width-lg: 1000px;
 $margin-auto-x: 0 auto;
 $screen-sm: 320px;
 $screen-md: 768px;
@@ -16,7 +16,7 @@ $content-width-lg: 1300px;
 
   @media (min-width: $screen-md) {
     margin: $margin-auto-x;
-    max-width: $content-max-width;
+    max-width: $content-width-lg;
     padding: 0;
   }
 }

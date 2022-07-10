@@ -47,6 +47,6 @@
   margin: $margin-auto-x;
 
   @media (min-width: $screen-md) {
-    max-width: $content-max-width;
+    max-width: $content-width-lg;
   }
 }
