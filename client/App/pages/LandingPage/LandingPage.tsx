@@ -1,6 +1,7 @@
 import Carousel from './components/Carousel/Carousel';
 import { Navbar } from './components/Navbar';
 import { carouselLanding, flag, installation, smartphone } from '../../assets/images';
+import { MobileAppAd } from './components/MobileAppAd';
 
 export const LandingPage = () => {
   const slides = [
@@ -17,6 +18,7 @@ export const LandingPage = () => {
     <div>
       <Navbar />
       <Carousel slides={slides} indicators={true} controls={false} interval={3000} autoPlay={true} />
+      <MobileAppAd />
     </div>
   );
 };

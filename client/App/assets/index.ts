@@ -9,5 +9,6 @@ import arrow from './arrow.svg';
 import mobileMenu from './mobileMenu.svg';
 import googlePlay from './google-play.svg';
 import arrowRight from './arrow-right.svg';
+import apple from './apple.svg';
 
-export { arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };
+export { apple, arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };

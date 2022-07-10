@@ -1,0 +1,43 @@
+@import "/client/App/styles/utils";
+
+.mobileAppAd {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: linear-gradient(140deg, #fff8e9, #fff);
+  display: flex;
+  font-size: 30px;
+  color: #414141;
+}
+
+.buttonsWrapper {
+  position: absolute;
+  display: flex;
+  bottom: 50px;
+}
+
+.button {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background-color: $yellow;
+  margin-right: 10px;
+  padding: 10px 25px;
+}
+
+.left {
+  padding: 50px 0 50px 50px;
+  position: relative;
+}
+
+.logo {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.boldedText {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
