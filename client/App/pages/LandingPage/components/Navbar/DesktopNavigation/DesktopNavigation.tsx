@@ -2,12 +2,12 @@ import styles from './DesktopNavigation.module.scss';
 import { arrow } from '../../../../../assets';
 import classNames from 'classnames';
 
-interface DesktopNavigationProps {
+interface Props {
   isToggled: boolean;
   handleToggle: () => void;
 }
 
-export const DesktopNavigation = ({ isToggled, handleToggle }: DesktopNavigationProps) => {
+export const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
   const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
   const goToWorkersSectionButton = classNames(styles.itemButton, styles.workersSectionButton);

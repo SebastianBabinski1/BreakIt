@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
 import styles from './VerticalCarouselItem.module.scss';
 
-interface verticalCarouselItemProps {
+interface Props {
   slide: {
     clientName: string;
     clientPicture: string;
@@ -14,7 +14,7 @@ interface verticalCarouselItemProps {
   startSlide: MouseEventHandler<HTMLDivElement>;
 }
 
-export const VerticalCarouselItem = ({ slide, stopSlide, startSlide }: verticalCarouselItemProps) => {
+export const VerticalCarouselItem = ({ slide, stopSlide, startSlide }: Props) => {
   return (
     <div className={styles.carouselItem} onMouseEnter={stopSlide} onMouseOut={startSlide}>
       <div>

@@ -1,11 +1,11 @@
 import styles from './MobileNavigationLink.module.scss';
 
-interface mobileNavigationProps {
+interface Props {
   src: string;
   text: string;
 }
 
-export const MobileNavigationLink = ({ src, text }: mobileNavigationProps) => {
+export const MobileNavigationLink = ({ src, text }: Props) => {
   return (
     <li className={styles.mobileNavigationLink}>
       <img className={styles.image} src={src} />

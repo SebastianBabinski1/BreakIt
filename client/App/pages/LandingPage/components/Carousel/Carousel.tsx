@@ -6,7 +6,7 @@ import { CarouselControls } from './CarouselControls';
 import classnames from 'classnames';
 import { carouselSlides as slides } from './utils';
 
-interface carouselProps {
+interface Props {
   interval?: number;
   controls?: boolean;
   indicators?: boolean;
@@ -20,7 +20,7 @@ export const Carousel = ({
   indicators = false,
   autoPlay = false,
   children,
-}: carouselProps) => {
+}: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideInterval, setSlideInterval] = useState(0);
 

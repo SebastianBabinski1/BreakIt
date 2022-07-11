@@ -3,12 +3,12 @@ import { verticalCarouselSlides as slides } from './utils';
 import styles from './VerticalCarousel.module.scss';
 import { VerticalCarouselItem } from './VerticalCarouselItem';
 
-interface carouselProps {
+interface Props {
   interval?: number;
   autoPlay?: boolean;
 }
 
-export const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) => {
+export const VerticalCarousel = ({ interval = 5000, autoPlay = false }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideInterval, setSlideInterval] = useState(0);
 
