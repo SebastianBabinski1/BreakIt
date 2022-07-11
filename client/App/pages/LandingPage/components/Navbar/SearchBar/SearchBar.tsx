@@ -1,7 +1,7 @@
 import styles from './SearchBar.module.scss';
 import { search } from '../../../../../assets/index';
 
-const SearchBar = () => {
+export const SearchBar = () => {
   return (
     <div className={styles.search}>
       <img className={styles.searchMagnifier} src={search} />
@@ -9,5 +9,3 @@ const SearchBar = () => {
     </div>
   );
 };
-
-export default SearchBar;

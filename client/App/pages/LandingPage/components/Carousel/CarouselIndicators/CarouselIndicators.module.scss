@@ -1,17 +1,16 @@
 .carousel {
   &Indicators {
     display: flex;
-    z-index: 2;
     justify-content: center;
   }
 
   &Indicator {
-    width: 1rem;
-    height: 1rem;
+    width: 15px;
+    height: 15px;
     border: none;
     background-color: #dadada;
-    margin: 0 0.5rem;
-    border-radius: 50%;
+    margin: 0 8px;
+    border-radius: 100%;
     cursor: pointer;
   }
 }

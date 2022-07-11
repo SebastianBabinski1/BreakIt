@@ -1,11 +1,11 @@
 import styles from './CarouselControls.module.scss';
 
-interface carouselControlsProps {
+interface Props {
   prev: () => void;
   next: () => void;
 }
 
-const CarouselControls = ({ prev, next }: carouselControlsProps) => {
+export const CarouselControls = ({ prev, next }: Props) => {
   return (
     <div>
       <button onClick={prev} className={`${styles.carouselControl} ${styles.left}`}>
@@ -17,5 +17,3 @@ const CarouselControls = ({ prev, next }: carouselControlsProps) => {
     </div>
   );
 };
-
-export default CarouselControls;
