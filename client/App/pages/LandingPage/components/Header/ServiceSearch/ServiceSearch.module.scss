@@ -1,0 +1,51 @@
+@import "/client/App/styles/utils";
+
+.service {
+  margin: 40px 0;
+  color: #414141;
+  flex: 1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: $second-font;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-md) {
+    font-size: 42px;
+  }
+}
+
+.image {
+  width: 20px;
+  display: inline-block;
+}
+
+.introduction {
+  margin-bottom: 30px;
+}
+
+.search {
+  display: flex;
+  border: 1px solid #ebebeb;
+  margin: 10px 0;
+
+  &Input {
+    border: none;
+    padding: 10px;
+    flex-grow: 1;
+  }
+}
+
+.magnifier {
+  width: 30px;
+  padding: 8px;
+
+  &Button {
+    background-color: $yellow;
+    border: none;
+    cursor: pointer;
+  }
+}
