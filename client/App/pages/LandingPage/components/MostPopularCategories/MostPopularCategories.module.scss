@@ -1,0 +1,104 @@
+@import "/client/App/styles/utils";
+
+.mostPopularServicesCarousel {
+  position: relative;
+  color: white;
+  margin: $margin-auto-x;
+  max-width: 1600px;
+  padding: 0 20px;
+
+  @media (min-width: $screen-md) {
+    padding: 0;
+  }
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: none;
+  background-color: rgb(255 217 0 / 80%);
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+
+  &Left {
+    top: calc(50% - 25px);
+    left: 16px;
+
+    @media (min-width: $screen-md) {
+      left: 50px;
+    }
+  }
+
+  &Right {
+    top: calc(50% - 25px);
+    right: 16px;
+
+    @media (min-width: $screen-md) {
+      right: 50px;
+    }
+  }
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+
+  &Inner {
+    display: flex;
+    position: absolute;
+    transition: ease 0.5s;
+  }
+}
+
+.arrow {
+  width: 30px;
+
+  &Left {
+    transform: rotate(90deg);
+  }
+
+  &Right {
+    transform: rotate(270deg);
+  }
+}
+
+.controlHidden {
+  display: none;
+  pointer-events: none;
+}
+
+.fog {
+  position: absolute;
+  height: 150px;
+  width: 100px;
+  z-index: 1;
+
+  @media (min-width: $screen-md) {
+    width: 200px;
+  }
+
+  &Left {
+    background: linear-gradient(90deg, #fff, hsl(0deg 0% 100% / 0%));
+  }
+
+  &Right {
+    background: linear-gradient(90deg, hsl(0deg 0% 100% / 0%), #fff);
+    top: 0;
+    right: 0;
+  }
+}
+
+.title {
+  margin: 50px auto 35px;
+  max-width: $content-width-lg;
+  color: $gray-dark;
+  font-family: $second-font;
+  font-size: $font-md;
+  font-weight: 500;
+}

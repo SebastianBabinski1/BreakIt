@@ -1,7 +1,7 @@
 @import "/client/App/styles/utils";
 
 .mobileNavigation {
-  background-color: #f6f6f6;
+  background-color: $gray-light;
   height: 100vh;
 }
 
@@ -27,6 +27,6 @@
 
   &Text {
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: $font-sm;
   }
 }

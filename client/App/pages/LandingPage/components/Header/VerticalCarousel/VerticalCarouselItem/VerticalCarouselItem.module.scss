@@ -4,7 +4,6 @@
   display: flex;
   margin-bottom: 10px;
   padding: 15px;
-  background-color: #fff;
   border: 1px solid #ebebeb;
   box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
 }
@@ -15,7 +14,7 @@
   justify-content: center;
   border: 1px solid #ebebeb;
   background-color: #93e69d;
-  color: #fff;
+  color: white;
   margin-right: 10px;
   height: 50px;
   width: 50px;
@@ -24,7 +23,7 @@
   &Small {
     height: 30px;
     width: 30px;
-    font-size: 12px;
+    font-size: $font-sm;
   }
 
   &Image {
@@ -34,7 +33,7 @@
 }
 
 .textHighlighted {
-  color: #0071bc;
+  color: $blue;
 }
 
 .avatarsWrapper {
@@ -42,5 +41,5 @@
 }
 
 .timeOfAcceptance {
-  color: #a0a0a0;
+  color: $gray-medium;
 }

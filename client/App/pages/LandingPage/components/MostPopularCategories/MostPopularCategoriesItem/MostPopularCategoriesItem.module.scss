@@ -1,0 +1,33 @@
+@import "/client/App/styles/utils";
+
+.mostPopularCategoriesItem {
+  margin: 0 10px;
+  cursor: pointer;
+  background-size: cover;
+  height: 150px;
+  width: 300px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.title {
+  font-family: $second-font;
+  font-weight: bold;
+}
+
+.inquiries {
+  font-family: $second-font;
+  color: hsl(0deg 0% 100% / 70%);
+}
+
+.blure {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, rgb(0 0 0 / 75%), transparent);
+}

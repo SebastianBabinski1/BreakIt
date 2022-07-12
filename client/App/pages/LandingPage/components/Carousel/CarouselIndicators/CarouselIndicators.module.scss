@@ -1,3 +1,5 @@
+@import "/client/App/styles/utils";
+
 .carousel {
   &Indicators {
     display: flex;
@@ -16,5 +18,5 @@
 }
 
 .active {
-  background-color: #414141;
+  background-color: $gray-dark;
 }

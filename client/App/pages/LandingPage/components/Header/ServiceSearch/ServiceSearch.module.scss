@@ -2,19 +2,19 @@
 
 .service {
   margin: 40px 0;
-  color: #414141;
+  color: $gray-dark;
   flex: 1;
 }
 
 .title {
-  font-size: 24px;
+  font-size: $font-md;
   font-weight: bold;
   letter-spacing: 1px;
   font-family: $second-font;
   margin-bottom: 16px;
 
   @media (min-width: $screen-md) {
-    font-size: 42px;
+    font-size: $font-lg;
   }
 }
 

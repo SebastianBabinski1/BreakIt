@@ -1,5 +1,3 @@
-$body-color: red;
-$yellow: gold;
 $second-font: "Poppins", system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans",
   "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $margin-auto-x: 0 auto;
@@ -13,6 +11,19 @@ $screen-lg: 1366px;
 $content-width-sm: 290px;
 $content-width-md: 728px;
 $content-width-lg: 1000px;
+
+// Font sizes
+$font-sm: 12px;
+$font-md: 24px;
+$font-lg: 36px;
+
+// Default colors
+$gray-light: #f6f6f6;
+$gray-medium: #676767;
+$gray-dark: #414141;
+$blue: #0071bc;
+$blue-hover: #05314e;
+$yellow: gold;
 
 .pageContent {
   padding: 0 20px;

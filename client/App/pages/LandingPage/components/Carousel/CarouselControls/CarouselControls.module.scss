@@ -1,3 +1,5 @@
+@import "/client/App/styles/utils";
+
 .carouselControl {
   background-color: rgb(0 0 0 / 50%);
   border: none;
@@ -5,7 +7,7 @@
   height: 60px;
   width: 80px;
   top: calc(50% - 30px);
-  color: #f3f3f3;
+  color: $gray-light;
   cursor: pointer;
 }
 
