@@ -1,13 +1,12 @@
 @import "/client/App/styles/utils";
 
-.contentWrapper {
-  margin: 0 0.5rem;
+.mostPopularCategoriesItem {
+  margin: 0 10px;
   cursor: pointer;
-  background-repeat: no-repeat;
   background-size: cover;
-  transition: transform 0.2s;
   height: 150px;
   width: 300px;
+  transition: transform 0.2s;
 
   &:hover {
     transform: scale(1.1);
@@ -16,11 +15,12 @@
 
 .title {
   font-family: $second-font;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .inquiries {
   font-family: $second-font;
+  color: hsl(0deg 0% 100% / 70%);
 }
 
 .blure {

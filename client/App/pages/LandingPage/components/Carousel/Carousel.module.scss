@@ -1,13 +1,8 @@
+@import "/client/App/styles/utils";
+
 .carousel {
-  margin: 0 auto;
   overflow: hidden;
   position: relative;
-  max-width: 800px;
-  width: 90%;
-
-  @media (min-width: 992px) {
-    width: 50%;
-  }
 
   &Inner {
     white-space: nowrap;

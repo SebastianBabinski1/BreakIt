@@ -1,15 +1,14 @@
 import styles from './MostPopularCategoriesItem.module.scss';
 
-interface mostPopularCategoriesItemProps {
+interface Props {
   slide: { image: string; title: string; numberOfInquiries: number };
 }
 
-const MostPopularCategoriesItem = ({ slide }: mostPopularCategoriesItemProps) => (
-  <div className={styles.contentWrapper} style={{ backgroundImage: `url(${slide.image})` }}>
+export const MostPopularCategoriesItem = ({ slide }: Props) => (
+  <div className={styles.mostPopularCategoriesItem} style={{ backgroundImage: `url(${slide.image})` }}>
     <div className={styles.blure}>
       <p className={styles.title}>{slide.title}</p>
       <p className={styles.inquiries}>{slide.numberOfInquiries} zapytań</p>
     </div>
   </div>
 );
-export default MostPopularCategoriesItem;

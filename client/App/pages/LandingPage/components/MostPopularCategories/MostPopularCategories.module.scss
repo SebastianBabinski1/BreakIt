@@ -1,13 +1,14 @@
 @import "/client/App/styles/utils";
 
-.wrapper {
+.mostPopularServicesCarousel {
   position: relative;
   color: white;
-  margin: 0 auto;
-  max-width: 1000px;
+  margin: $margin-auto-x;
+  max-width: 1600px;
+  padding: 0 20px;
 
-  @media (min-width: 992px) {
-    width: 80%;
+  @media (min-width: $screen-md) {
+    padding: 0;
   }
 }
 
@@ -15,8 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   border: none;
   background-color: rgb(255 217 0 / 80%);
@@ -25,20 +26,20 @@
   cursor: pointer;
 
   &Left {
-    top: calc(50% - 1rem);
-    left: 1rem;
+    top: calc(50% - 25px);
+    left: 16px;
 
-    @media (min-width: 992px) {
-      left: 5rem;
+    @media (min-width: $screen-md) {
+      left: 50px;
     }
   }
 
   &Right {
-    top: calc(50% - 1rem);
-    right: 1rem;
+    top: calc(50% - 25px);
+    right: 16px;
 
-    @media (min-width: 992px) {
-      right: 5rem;
+    @media (min-width: $screen-md) {
+      right: 50px;
     }
   }
 }
@@ -46,18 +47,17 @@
 .carousel {
   position: relative;
   overflow: hidden;
-  min-height: 150px;
+  height: 150px;
 
   &Inner {
     display: flex;
     position: absolute;
-    white-space: nowrap;
     transition: ease 0.5s;
   }
 }
 
 .arrow {
-  width: 2rem;
+  width: 30px;
 
   &Left {
     transform: rotate(90deg);
@@ -75,14 +75,16 @@
 
 .fog {
   position: absolute;
-  min-height: 150px;
-  width: 200px;
+  height: 150px;
+  width: 100px;
   z-index: 1;
+
+  @media (min-width: $screen-md) {
+    width: 200px;
+  }
 
   &Left {
     background: linear-gradient(90deg, #fff, hsl(0deg 0% 100% / 0%));
-    top: 0;
-    left: 0;
   }
 
   &Right {
@@ -90,4 +92,13 @@
     top: 0;
     right: 0;
   }
+}
+
+.title {
+  margin: 50px auto 35px;
+  max-width: $content-width-lg;
+  color: $gray-dark;
+  font-family: $second-font;
+  font-size: $font-md;
+  font-weight: 500;
 }

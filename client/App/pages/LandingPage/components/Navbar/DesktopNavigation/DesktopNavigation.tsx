@@ -7,7 +7,7 @@ interface Props {
   handleToggle: () => void;
 }
 
-const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
+export const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
   const toggleItemClasses = classNames(styles.item, { [styles.itemButtonToggled]: isToggled });
   const toggleButtonClasses = classNames(styles.itemButton, styles.toggle);
   const goToWorkersSectionButton = classNames(styles.itemButton, styles.workersSectionButton);
@@ -32,5 +32,3 @@ const DesktopNavigation = ({ isToggled, handleToggle }: Props) => {
     </ul>
   );
 };
-
-export default DesktopNavigation;

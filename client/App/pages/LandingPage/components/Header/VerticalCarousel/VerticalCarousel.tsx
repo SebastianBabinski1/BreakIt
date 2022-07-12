@@ -1,76 +1,14 @@
 import { useEffect, useState } from 'react';
-import { flag, installation, smartphone } from '../../../../../assets/images';
+import { verticalCarouselSlides as slides } from './utils';
 import styles from './VerticalCarousel.module.scss';
-import VerticalCarouselItem from './VerticalCarouselItem/VerticalCarouselItem';
+import { VerticalCarouselItem } from './VerticalCarouselItem';
 
-interface carouselProps {
+interface Props {
   interval?: number;
   autoPlay?: boolean;
 }
 
-const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) => {
-  const slides = [
-    {
-      clientName: 'Michała',
-      clientPicture: undefined,
-      clientQuestion: 'Montaż kabiny prysznicowej',
-      specialists: [
-        { name: 'Zbigniew', avatar: undefined },
-        { name: 'Krzysztof', avatar: installation },
-      ],
-      updateTime: '2 godziny temu',
-      place: 'Wrocław',
-    },
-    {
-      clientName: 'Rafała',
-      clientPicture: undefined,
-      clientQuestion: 'Montaż paneli podłogowych',
-      specialists: [
-        { name: 'Zbigniew', avatar: undefined },
-        { name: 'Anna', avatar: smartphone },
-        { name: 'Henryk', avatar: undefined },
-      ],
-      updateTime: 'Kilka sekund temu',
-      place: 'Kraków',
-    },
-    {
-      clientName: 'Agnieszki',
-      clientPicture: flag,
-      clientQuestion: 'Wybudowanie garażu',
-      specialists: [
-        { name: 'Zbigniew', avatar: undefined },
-        { name: 'Alojzy', avatar: undefined },
-      ],
-      updateTime: '5 godzin temu',
-      place: 'Warszawa',
-    },
-    {
-      clientName: 'Stanisława',
-      clientPicture: undefined,
-      clientQuestion: 'Cyklinowanie',
-      specialists: [
-        { name: 'Aleksander', avatar: undefined },
-        { name: 'Konstanty', avatar: undefined },
-        { name: 'Piotr', avatar: undefined },
-        { name: 'Alfred', avatar: undefined },
-      ],
-      updateTime: '4 godziny temu',
-      place: 'Gdańsk',
-    },
-    {
-      clientName: 'Henryka',
-      clientPicture: undefined,
-      clientQuestion: 'Zamontowanie drzwi',
-      specialists: [
-        { name: 'Aleksander', avatar: undefined },
-        { name: 'Piotr', avatar: undefined },
-        { name: 'Alfred', avatar: undefined },
-      ],
-      updateTime: '20 minut temu',
-      place: 'Olsztyn',
-    },
-  ];
-
+export const VerticalCarousel = ({ interval = 5000, autoPlay = false }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideInterval, setSlideInterval] = useState(0);
 
@@ -113,7 +51,7 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.verticalCarousel}>
       <button
         onClick={moveToNextSlide}
         className={`${styles.control} ${currentSlide == slides.length - 1 && styles.controlHidden}`}
@@ -121,7 +59,7 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
         <img
           className={styles.arrowUp}
           src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.241.0/static/media/activity_feed_scroll_arrow.4b8e052d.svg"
-        ></img>
+        />
       </button>
       <div className={styles.carousel}>
         <div
@@ -132,16 +70,14 @@ const VerticalCarousel = ({ interval = 5000, autoPlay = false }: carouselProps) 
             <VerticalCarouselItem key={index} slide={slide} stopSlide={stopSlideTimer} startSlide={startSlideTimer} />
           ))}
         </div>
-        <div className={styles.fog}></div>
+        <div className={styles.fog} />
       </div>
       <button onClick={moveToPrevSlide} className={`${styles.control} ${currentSlide == 0 && styles.controlHidden}`}>
         <img
           className={styles.arrowDown}
           src="https://d13uy3bdhwkuhk.cloudfront.net/web/v0.241.0/static/media/activity_feed_scroll_arrow.4b8e052d.svg"
-        ></img>
+        />
       </button>
     </div>
   );
 };
-
-export default VerticalCarousel;

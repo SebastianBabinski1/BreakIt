@@ -6,23 +6,18 @@
 
   &Left {
     display: flex;
-    align-items: center;
     background-color: $yellow;
-    padding: 0 1.5rem;
+    padding: 0 30px;
   }
 
   &Right {
-    padding-right: 1rem;
-    width: 100%;
+    padding-right: 10px;
+    flex: 1;
   }
 }
 
 .logo {
-  min-width: 5rem;
-}
-
-.mediumBarContainer {
-  display: flex;
+  min-width: 80px;
 }
 
 .menu {
@@ -37,10 +32,10 @@
 
   &Visible {
     opacity: 1;
-    top: 60px;
+    top: 66px;
     transition: opacity 0.2s;
     pointer-events: all;
-    background-color: #f6f6f6;
+    background-color: $gray-light;
   }
 }
 
@@ -49,9 +44,9 @@
 }
 
 .dropdownWrapper {
-  margin: 0 auto;
+  margin: $margin-auto-x;
 
-  @media (min-width: 1200px) {
-    max-width: 1000px;
+  @media (min-width: $screen-md) {
+    max-width: $content-width-lg;
   }
 }

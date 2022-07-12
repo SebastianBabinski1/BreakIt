@@ -1,22 +1,20 @@
 import styles from './MobileNavigation.module.scss';
-import MobileNavigationLink from './MobileNavigationLink/MobileNavigationLink';
+import { MobileNavigationLink } from './MobileNavigationLink';
 import { googlePlay, hand } from '../../../../../assets';
+import { mobileNavLinksText } from './utils';
 
-const MobileNavigation = () => {
+export const MobileNavigation = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.mobileNavigation}>
       <ul className={styles.linksWrapper}>
-        <MobileNavigationLink src={hand} text="Usługi" />
-        <MobileNavigationLink src={hand} text="BreakIt dla wykonawców" />
-        <MobileNavigationLink src={hand} text="Moja zapytania" />
-        <MobileNavigationLink src={hand} text="Zaloguj się" />
+        {mobileNavLinksText.map((link, index) => (
+          <MobileNavigationLink key={index} src={hand} text={link} />
+        ))}
       </ul>
       <div className={styles.button}>
-        <img className={styles.buttonImage} src={googlePlay}></img>
+        <img className={styles.buttonImage} src={googlePlay} />
         <p className={styles.buttonText}>POBIERZ APLIKACJĘ BREAKIT</p>
       </div>
     </div>
   );
 };
-
-export default MobileNavigation;

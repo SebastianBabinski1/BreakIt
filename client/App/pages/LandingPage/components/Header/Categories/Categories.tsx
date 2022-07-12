@@ -1,21 +1,19 @@
 import styles from './Categories.module.scss';
-import { categories } from '../../Dropdown';
-import ListItem from '../../Dropdown/ListItem/ListItem';
+import { DropdownItem } from '../../Dropdown/DropdownItem';
 import { arrow } from '../../../../../assets';
+import { categories } from '../../../../../utils';
 
-const Categories = () => {
+export const Categories = () => {
   return (
-    <div className={styles.categoriesWrapper}>
+    <div className={styles.categories}>
       {categories.map((category, index) => {
         return (
           <div className={styles.listItemWrapper} key={index}>
-            <ListItem src={category.src} text={category.text} />
-            <img className={styles.arrow} src={arrow}></img>
+            <DropdownItem src={category.src} text={category.text} />
+            <img className={styles.arrow} src={arrow} />
           </div>
         );
       })}
     </div>
   );
 };
-
-export default Categories;

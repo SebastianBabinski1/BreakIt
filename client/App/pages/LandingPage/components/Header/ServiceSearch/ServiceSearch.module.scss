@@ -1,50 +1,47 @@
 @import "/client/App/styles/utils";
 
 .service {
-  margin: 2rem 0;
-  color: #414141;
+  margin: 40px 0;
+  color: $gray-dark;
+  flex: 1;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 56px;
+  font-size: $font-md;
+  font-weight: bold;
   letter-spacing: 1px;
   font-family: $second-font;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 
-  @media (min-width: 992px) {
-    font-size: 42px;
+  @media (min-width: $screen-md) {
+    font-size: $font-lg;
   }
 }
 
 .image {
-  width: 1rem;
+  width: 20px;
+  display: inline-block;
 }
 
 .introduction {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .search {
   display: flex;
-  flex-grow: 1;
   border: 1px solid #ebebeb;
-  border-radius: 0.25rem;
-  margin: 0.5rem 0;
+  margin: 10px 0;
 
   &Input {
     border: none;
-    padding: 0.5rem;
-    width: 100%;
+    padding: 10px;
+    flex-grow: 1;
   }
 }
 
 .magnifier {
-  width: 2rem;
-  padding: 0.5rem;
+  width: 30px;
+  padding: 8px;
 
   &Button {
     background-color: $yellow;
