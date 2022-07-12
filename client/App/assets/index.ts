@@ -9,6 +9,7 @@ import arrow from './arrow.svg';
 import mobileMenu from './mobileMenu.svg';
 import googlePlay from './google-play.svg';
 import arrowRight from './arrow-right.svg';
+import star from './star.svg';
 import apple from './apple.svg';
 
-export { apple, arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };
+export { star, arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay, apple };

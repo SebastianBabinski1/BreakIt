@@ -1,11 +1,10 @@
 .carouselControl {
   background-color: rgb(0 0 0 / 50%);
   border: none;
-  display: inline-block;
   position: absolute;
-  height: 4rem;
-  width: 6rem;
-  top: calc(50% - 2rem);
+  height: 60px;
+  width: 80px;
+  top: calc(50% - 30px);
   color: #f3f3f3;
   cursor: pointer;
 }

@@ -1,19 +1,18 @@
-.mobileNavigationLink {
+.item {
   display: flex;
-  margin: 16px 0;
-}
-
-.image {
-  width: 30px;
-  margin-right: 15px;
-}
-
-.text {
+  flex: 33%;
+  margin: 20px 0;
   color: #0071bc;
   font-weight: bold;
+  align-items: center;
   cursor: pointer;
 
   &:hover {
     color: #05314e;
   }
+}
+
+.icon {
+  width: 32px;
+  margin-right: 20px;
 }
