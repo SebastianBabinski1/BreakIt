@@ -1,0 +1,16 @@
+.footerPartnersItem {
+  display: flex;
+  padding: 20px 0;
+  margin-left: 15px;
+}
+
+.image {
+  width: 16px;
+  margin-right: 5px;
+}
+
+.imageWithoutTitle {
+  width: 100px;
+  height: 20px;
+  object-fit: cover;
+}

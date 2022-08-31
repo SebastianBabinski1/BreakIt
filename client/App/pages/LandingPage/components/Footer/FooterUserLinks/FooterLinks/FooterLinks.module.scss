@@ -1,0 +1,41 @@
+@import "/client/App/styles/utils";
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #676767;
+  font-family: $second-font;
+  margin-bottom: 5px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.itemContent {
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: $main-font;
+  color: #676767;
+  line-height: 24px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

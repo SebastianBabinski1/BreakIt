@@ -10,5 +10,30 @@ import mobileMenu from './mobileMenu.svg';
 import googlePlay from './google-play.svg';
 import arrowRight from './arrow-right.svg';
 import star from './star.svg';
+import otomoto from './otomoto.svg';
+import otodom from './otodom.svg';
+import olx from './olx.svg';
+import carsmile from './carsmile.svg';
+import facebook from './facebook.svg';
+import youtube from './youtube.svg';
 
-export { star, arrowRight, hand, home, leaf, business, party, repair, search, arrow, mobileMenu, googlePlay };
+export {
+  facebook,
+  youtube,
+  otomoto,
+  otodom,
+  olx,
+  carsmile,
+  star,
+  arrowRight,
+  hand,
+  home,
+  leaf,
+  business,
+  party,
+  repair,
+  search,
+  arrow,
+  mobileMenu,
+  googlePlay,
+};
