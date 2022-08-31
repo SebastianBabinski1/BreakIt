@@ -1,0 +1,45 @@
+@import "/client/App/styles/utils";
+
+.wrapper {
+  font-size: 13px;
+  border-bottom: 1px solid #e6e6e6;
+
+  @media (min-width: $screen-md) {
+    border-bottom: none;
+    border-top: 1px solid #e6e6e6;
+  }
+}
+
+.footer {
+  &SocialsWrapper {
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &Partners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+
+    @media (min-width: $screen-md) {
+      border-bottom: none;
+    }
+  }
+
+  &Socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &Copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,11 @@
+@import "/client/App/styles/utils";
+
+.footerUserLinks {
+  padding: 20px 0;
+  border-top: 1px solid #e6e6e6;
+  justify-content: space-between;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
+}
